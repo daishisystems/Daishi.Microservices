@@ -14,6 +14,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
     public class CharacterFinderSteps {
         private char _character;
         private CharacterFinder _characterFinder;
+        private StreamReader _reader;
         private IEnumerable<long> _results;
 
         [Given(@"I have supplied a character")]
@@ -24,7 +25,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         [Given(@"I have instantiated a CharacterFinder")]
         public void GivenIHaveInstantiatedACharacterFinder() {
             Stream stream = new MemoryStream(Encoding.UTF8.GetBytes(Resources.SimpleJSON));
-            _characterFinder = new CharacterFinder(stream);
+            _reader = new StreamReader(stream);
+            _characterFinder = new CharacterFinder(_reader);
         }
 
         [When(@"I invoke the CharacterFinder\.Find method")]
@@ -35,6 +37,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         [Then(@"An Iterator containing each matching position is returned")]
         public void ThenAnIteratorContainingEachMatchingPositionIsReturned() {
             Assert.AreEqual(3, _results.Count());
+            _reader.Dispose();
         }
     }
 }

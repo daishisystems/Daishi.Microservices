@@ -6,15 +6,18 @@ using System.IO;
 
 namespace Daishi.Microservices.Components.Serialisation {
     public class JsonPropertyFinder {
-        private readonly Stream _stream;
+        private readonly StreamReader _reader;
 
-        public JsonPropertyFinder(Stream stream) {
-            _stream = stream;
+        public JsonPropertyFinder(StreamReader reader) {
+            _reader = reader;
         }
 
         public long Find(string target) {
-            using (var reader = new StreamReader(_stream)) {
-                // todo: Need character finder component
+            var characterFinder = new CharacterFinder(_reader);
+            var positions = characterFinder.Find(target[0]);
+
+            foreach (var position in positions) {
+                // Find the word.
             }
 
             return 1L;

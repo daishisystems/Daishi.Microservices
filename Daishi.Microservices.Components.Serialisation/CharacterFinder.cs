@@ -7,23 +7,21 @@ using System.IO;
 
 namespace Daishi.Microservices.Components.Serialisation {
     public class CharacterFinder {
-        private readonly Stream _stream;
+        private readonly StreamReader _reader;
 
-        public CharacterFinder(Stream stream) {
-            _stream = stream;
+        public CharacterFinder(StreamReader reader) {
+            _reader = reader;
         }
 
         public IEnumerable<long> Find(char target) {
-            using (var reader = new StreamReader(_stream)) {
-                int current;
-                do {
-                    current = reader.Read();
-                    var character = (char) current;
+            int current;
+            do {
+                current = _reader.Read();
+                var character = (char) current;
 
-                    if (character.Equals(target))
-                        yield return current;
-                } while (current > -1);
-            }
+                if (character.Equals(target))
+                    yield return current;
+            } while (current > -1);
         }
     }
 }
