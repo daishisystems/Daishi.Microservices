@@ -57,6 +57,11 @@
       <DependentUpon>JsonPropertyFinder.feature</DependentUpon>
     </Compile>
     <Compile Include="JsonPropertyFinderSteps.cs" />
+    <Compile Include="JsonPropertyValidator.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JsonPropertyValidator.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -79,6 +84,10 @@
     <None Include="JsonPropertyFinder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>JsonPropertyFinder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="JsonPropertyValidator.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JsonPropertyValidator.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="WordBuilder.feature">

@@ -23,7 +23,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public void WhenIInvokeAJsonPropertyFinder() {
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(Resources.SimpleJSON));
             _reader = new BinaryReader(stream);
-            _finder = new JsonPropertyFinder(_reader);
+            _finder = new JsonPropertyFinder(_reader, new WordBuilder(_reader));
         }
 
         [Then(@"the JsonPropertyFinder will return the property's position in the Stream")]
