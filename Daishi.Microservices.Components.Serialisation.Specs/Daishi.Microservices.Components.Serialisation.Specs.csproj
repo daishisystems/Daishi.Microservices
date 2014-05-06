@@ -51,6 +51,12 @@
       <DependentUpon>CharacterFinder.feature</DependentUpon>
     </Compile>
     <Compile Include="CharacterFinderSteps.cs" />
+    <Compile Include="JsonObjectBuilder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JsonObjectBuilder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="JsonObjectBuilderSteps.cs" />
     <Compile Include="JsonPropertyFinder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,6 +87,10 @@
     <None Include="CharacterFinder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CharacterFinder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="JsonObjectBuilder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JsonObjectBuilder.feature.cs</LastGenOutput>
     </None>
     <None Include="JsonPropertyFinder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

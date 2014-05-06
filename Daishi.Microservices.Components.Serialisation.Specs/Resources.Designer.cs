@@ -80,6 +80,15 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {&quot;commandName&quot;:&quot;GETTOCBYPROGRAMGRADE&quot;,&quot;response&quot;:{&quot;levels&quot;:{&quot;level&quot;:[{&quot;hierarchy&quot;:&quot;1&quot;, &quot;type&quot;:&quot;grade&quot;, &quot;level_number&quot;:&quot;0&quot;, &quot;level&quot;:[{&quot;hierarchy&quot;:&quot;1&quot;, &quot;type&quot;:&quot;unit&quot;, &quot;level&quot;:[{&quot;hierarchy&quot;:&quot;1&quot;, &quot;type&quot;:&quot;chapter&quot;, &quot;level&quot;:[{&quot;hierarchy&quot;:&quot;1&quot;, &quot;type&quot;:&quot;lesson&quot;, &quot;title&quot;:&quot;Algebra - Use Pictures to Add To&quot;},{&quot;hierarchy&quot;:&quot;2&quot;, &quot;type&quot;:&quot;lesson&quot;, &quot;title&quot;:&quot;Hands On - Model Adding To&quot;},{&quot;hierarchy&quot;:&quot;3&quot;, &quot;type&quot;:&quot;lesson&quot;, &quot;title&quot;:&quot;Hands On - Model Putting Together&quot;},{&quot;hierarchy&quot;:&quot;4&quot;, &quot;type&quot;:&quot;lesson&quot;, &quot;title&quot;:&quot; Problem Solving  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string LargeJSON {
+            get {
+                return ResourceManager.GetString("LargeJSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;name&quot;: &quot;Paul&quot;,
         ///    &quot;address&quot;: {
