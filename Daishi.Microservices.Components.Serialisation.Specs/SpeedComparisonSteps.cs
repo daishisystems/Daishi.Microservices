@@ -1,5 +1,6 @@
 ﻿#region Includes
 
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -49,6 +50,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Then(@"the response value associated with these components should be the lowest value")]
         public void ThenTheResponseValueAssociatedWithTheseComponentsShouldBeTheLowestValue() {
+            Console.WriteLine(string.Concat("These components: ", _result1));
+            Console.WriteLine(string.Concat("JSON.NET: ", _result2));
             Assert.Greater(_result2, _result1);
         }
     }
