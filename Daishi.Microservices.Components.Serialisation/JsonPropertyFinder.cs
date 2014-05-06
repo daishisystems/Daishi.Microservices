@@ -8,11 +8,13 @@ using System.Linq;
 namespace Daishi.Microservices.Components.Serialisation {
     public class JsonPropertyFinder {
         private readonly BinaryReader _reader;
-        private readonly WordBuilder _wordBuilder;
+        private readonly WordBuilder _builder;
+        private readonly JsonPropertyValidator _validator;
 
-        public JsonPropertyFinder(BinaryReader reader, WordBuilder wordBuilder) {
+        public JsonPropertyFinder(BinaryReader reader, WordBuilder builder, JsonPropertyValidator validator) {
             _reader = reader;
-            _wordBuilder = wordBuilder;
+            _builder = builder;
+            _validator = validator;
         }
 
         public long Find(string target) {
@@ -21,12 +23,12 @@ namespace Daishi.Microservices.Components.Serialisation {
             var characterFinder = new CharacterFinder(_reader);
             var positions = characterFinder.Find(target[0]);
 
-            if (positions.Select(position => new string(_wordBuilder
-                .Build()
-                .ToArray()))
-                .Any(target.Equals)) {
-                return _wordBuilder.Position;
+            if (positions.Select(position => new string(_builder.Build().ToArray()))
+                .Where(word => target.Equals(word))
+                .Any(word => _validator.Validate())) {
+                return _builder.ResetPosition;
             }
+
             return -1L;
         }
     }

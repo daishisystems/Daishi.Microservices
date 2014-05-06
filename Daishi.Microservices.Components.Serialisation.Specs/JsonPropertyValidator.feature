@@ -1,11 +1,17 @@
 ﻿Feature: JsonPropertyValidator
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	In order to ensure that a given JSON fragment is a valid property name
+	As a JsonPropertyValidator
+	I want to validate the JSON fragment
 
-@mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+@ignore
+Scenario: Validate a JSON fragment
+	Given I have supplied a JSON structure
+	And I have supplied a JSON fragment
+	When I invoke a JsonPropertyValidator
+	Then the JSON fragment should be validated as a valid JSON property name
+@ignore
+Scenario: Validate an invalid JSON fragment
+	Given I have supplied a JSON structure where a certain value is the same as a property name
+	And I have supplied a JSON fragment
+	When I invoke a JsonPropertyValidator
+	Then the JSON fragment should be validated as an invalid JSON property name

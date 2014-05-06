@@ -9,7 +9,7 @@ namespace Daishi.Microservices.Components.Serialisation {
     public class WordBuilder {
         private readonly BinaryReader _reader;
 
-        public long Position { get; private set; }
+        public long ResetPosition { get; private set; }
 
         public WordBuilder(BinaryReader reader) {
             _reader = reader;
@@ -32,7 +32,7 @@ namespace Daishi.Microservices.Components.Serialisation {
                     endOfWord = true;
             } while (current > -1 && !endOfWord);
 
-            Position = stream.Position;
+            ResetPosition = stream.Position;
         }
     }
 }
