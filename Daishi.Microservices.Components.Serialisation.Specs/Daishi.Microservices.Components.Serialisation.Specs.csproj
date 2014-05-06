@@ -63,6 +63,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="WordBuilder.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WordBuilder.feature</DependentUpon>
+    </Compile>
+    <Compile Include="WordBuilderSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -75,6 +81,10 @@
       <LastGenOutput>JsonPropertyFinder.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="WordBuilder.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WordBuilder.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Daishi.Microservices.Components.Serialisation\Daishi.Microservices.Components.Serialisation.csproj">

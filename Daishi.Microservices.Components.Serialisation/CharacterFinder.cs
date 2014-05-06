@@ -7,9 +7,9 @@ using System.IO;
 
 namespace Daishi.Microservices.Components.Serialisation {
     public class CharacterFinder {
-        private readonly StreamReader _reader;
+        private readonly BinaryReader _reader;
 
-        public CharacterFinder(StreamReader reader) {
+        public CharacterFinder(BinaryReader reader) {
             _reader = reader;
         }
 
@@ -20,7 +20,7 @@ namespace Daishi.Microservices.Components.Serialisation {
                 var character = (char) current;
 
                 if (character.Equals(target))
-                    yield return current;
+                    yield return _reader.BaseStream.Position;
             } while (current > -1);
         }
     }

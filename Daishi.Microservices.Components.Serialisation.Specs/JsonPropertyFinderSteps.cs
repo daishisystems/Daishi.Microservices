@@ -11,7 +11,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
     [Binding]
     public class JsonPropertyFinderSteps {
         private string _jsonProperty;
-        private StreamReader _reader;
+        private BinaryReader _reader;
         private JsonPropertyFinder _finder;
 
         [Given(@"I have supplied a JSON property")]
@@ -22,14 +22,14 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         [When(@"I invoke a JsonPropertyFinder")]
         public void WhenIInvokeAJsonPropertyFinder() {
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(Resources.SimpleJSON));
-            _reader = new StreamReader(stream);
+            _reader = new BinaryReader(stream);
             _finder = new JsonPropertyFinder(_reader);
         }
 
         [Then(@"the JsonPropertyFinder will return the property's position in the Stream")]
         public void ThenTheJsonPropertyFinderWillReturnThePropertySPositionInTheStream() {
             var position = _finder.Find(_jsonProperty);
-            Assert.AreEqual(1L, position);
+            Assert.AreEqual(37L, position);
             _reader.Dispose();
         }
     }
