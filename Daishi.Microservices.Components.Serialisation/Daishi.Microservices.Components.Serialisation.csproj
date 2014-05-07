@@ -40,13 +40,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterFinder.cs" />
+    <Compile Include="Json.cs" />
     <Compile Include="JsonContainerFactory.cs" />
     <Compile Include="JsonObjectBuilder.cs" />
     <Compile Include="JsonObjectType.cs" />
+    <Compile Include="JsonParser.cs" />
     <Compile Include="JsonPropertyFinder.cs" />
     <Compile Include="JsonPropertyValidator.cs" />
     <Compile Include="JsonReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StandardJsonParser.cs" />
     <Compile Include="WordBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
