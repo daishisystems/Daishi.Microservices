@@ -2,8 +2,6 @@
 
 using System;
 using System.Diagnostics;
-using System.IO;
-using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -22,16 +20,9 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             _stopwatch = new Stopwatch();
             _stopwatch.Start();
 
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(Resources.LargeJSON));
-            var reader = new BinaryReader(stream);
-            var finder = new JsonPropertyFinder(reader, new WordBuilder(reader),
-                new JsonPropertyValidator(reader));
-
-            finder.Find("response");
-            var jsonObjectBuilder = new JsonObjectBuilder(
-                reader, new JsonContainerFactory(), new JsonReader(reader));
-
-            var response = string.Concat("response:", jsonObjectBuilder.Build(JsonObjectType.Object));
+            var parser = new StandardJsonParser();
+            Json.Parse(parser, Resources.LargeJSON);
+            var response = parser.Json;
 
             _stopwatch.Stop();
             _result1 = _stopwatch.ElapsedMilliseconds;
