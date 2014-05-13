@@ -51,6 +51,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicSerialisor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BasicSerialisor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BasicSerialisorSteps.cs" />
     <Compile Include="CharacterFinder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +104,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="BasicSerialisor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BasicSerialisor.feature.cs</LastGenOutput>
+    </None>
     <None Include="CharacterFinder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CharacterFinder.feature.cs</LastGenOutput>
