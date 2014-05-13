@@ -10,7 +10,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public string[] Values { get; set; }
 
         public virtual SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties(new List<Property>(
+            return new SerialisableProperties("simpleObject", new List<Property>(
                 Values.Select(v => new StringProperty {
                     Value = v
                 })));

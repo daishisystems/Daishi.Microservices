@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="SimpleObject.cs" />
     <Compile Include="SimpleObjectContainingAnArrayProperty.cs" />
+    <Compile Include="SimpleObjectContainingAnArrayPropertyWithoutObjectName.cs" />
     <Compile Include="SimpleObjectThatDoesNotHaveAName.cs" />
     <Compile Include="SpeedComparison.feature.cs">
       <AutoGen>True</AutoGen>

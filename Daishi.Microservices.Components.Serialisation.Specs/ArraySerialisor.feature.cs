@@ -32,8 +32,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ArraySerialisor", "In order to ensure that arrays are serialised correctly\nAs an ArraySerialisor\nI w" +
-                    "ant to serialise an array", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ArraySerialisor", "In order to ensure that arrays are serialised correctly\r\nAs an ArraySerialisor\r\nI" +
+                    " want to serialise an array", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,6 +80,28 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I serialise the simple object containing an array property", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
  testRunner.Then("the simple object containing the array property should be serialised", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Serialise an array without an object-name")]
+        public virtual void SerialiseAnArrayWithoutAnObject_Name()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Serialise an array without an object-name", ((string[])(null)));
+#line 12
+this.ScenarioSetup(scenarioInfo);
+#line 13
+ testRunner.Given("I have supplied a simple object containing an array property and without an objec" +
+                    "t-name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+ testRunner.And("I instantiated an ArraySerialisor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.When("I serialise the simple object containing an array property and without an object-" +
+                    "name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.Then("the simple object containing the array property and without an object-name should" +
+                    " be serialised", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
