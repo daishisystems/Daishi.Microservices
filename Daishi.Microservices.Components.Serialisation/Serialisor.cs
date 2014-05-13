@@ -8,6 +8,7 @@ using System.Text;
 
 namespace Daishi.Microservices.Components.Serialisation {
     public class Serialisor {
+        // todo: Will end up a base class of BasicSerialisor, ArraySerialisor, etc. Called from Json.Serialise
         public Serialisor() {}
 
         public byte[] Serialise(IHaveSerialisableProperties @object) {

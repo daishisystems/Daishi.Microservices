@@ -49,12 +49,14 @@
     <Compile Include="JsonPropertyFinder.cs" />
     <Compile Include="JsonPropertyValidator.cs" />
     <Compile Include="JsonReader.cs" />
+    <Compile Include="NumericProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="PropertyWriter.cs" />
     <Compile Include="SerialisableProperties.cs" />
     <Compile Include="Serialisor.cs" />
     <Compile Include="StandardJsonParser.cs" />
+    <Compile Include="StringProperty.cs" />
     <Compile Include="WordBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

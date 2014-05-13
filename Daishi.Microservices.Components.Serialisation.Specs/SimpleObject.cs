@@ -11,11 +11,11 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         public SerialisableProperties GetSerializableProperties() {
             return new SerialisableProperties("simpleObject", new List<Property> {
-                new Property {
+                new StringProperty {
                     Key = "name",
                     Value = Name
                 },
-                new Property {
+                new NumericProperty {
                     Key = "count",
                     Value = Count
                 }
