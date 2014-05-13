@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicSerialisor.cs" />
     <Compile Include="CharacterFinder.cs" />
     <Compile Include="IHaveSerialisableProperties.cs" />
     <Compile Include="Json.cs" />

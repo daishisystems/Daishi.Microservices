@@ -14,7 +14,7 @@ namespace Daishi.Microservices.Components.Serialisation {
                 parser.FindProperty(new JsonPropertyFinder(reader,
                     new WordBuilder(reader),
                     new JsonPropertyValidator(reader)), propertyName);
-                parser.BuildObject(new JsonObjectBuilder(reader, new JsonContainerFactory(), 
+                parser.BuildObject(new JsonObjectBuilder(reader, new JsonContainerFactory(),
                     new JsonReader(reader)), propertyName);
             }
         }
