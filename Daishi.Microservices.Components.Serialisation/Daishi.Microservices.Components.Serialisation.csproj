@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArraySerialisor.cs" />
     <Compile Include="BasicSerialisor.cs" />
     <Compile Include="CharacterFinder.cs" />
     <Compile Include="IHaveSerialisableProperties.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Serialisor.cs" />
     <Compile Include="StandardJsonParser.cs" />
     <Compile Include="StringProperty.cs" />
+    <Compile Include="ValueWriter.cs" />
     <Compile Include="WordBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

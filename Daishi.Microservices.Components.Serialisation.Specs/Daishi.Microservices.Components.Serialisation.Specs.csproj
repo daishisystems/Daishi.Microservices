@@ -51,6 +51,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArraySerialisor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArraySerialisor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ArraySerialisorSteps.cs" />
     <Compile Include="BasicSerialisor.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +94,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SimpleObject.cs" />
+    <Compile Include="SimpleObjectContainingAnArrayProperty.cs" />
     <Compile Include="SimpleObjectThatDoesNotHaveAName.cs" />
     <Compile Include="SpeedComparison.feature.cs">
       <AutoGen>True</AutoGen>
@@ -104,6 +111,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ArraySerialisor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ArraySerialisor.feature.cs</LastGenOutput>
+    </None>
     <None Include="BasicSerialisor.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BasicSerialisor.feature.cs</LastGenOutput>
