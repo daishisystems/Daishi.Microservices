@@ -88,7 +88,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SimpleObject.cs" />
-    <Compile Include="SimpleObjectWithoutName.cs" />
+    <Compile Include="SimpleObjectThatDoesNotHaveAName.cs" />
     <Compile Include="SpeedComparison.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

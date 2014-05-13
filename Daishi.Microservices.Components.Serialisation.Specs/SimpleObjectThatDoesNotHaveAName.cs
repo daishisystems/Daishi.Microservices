@@ -5,8 +5,11 @@ using System.Collections.Generic;
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation.Specs {
-    internal class SimpleObjectWithoutName : SimpleObject {
-        public override SerialisableProperties GetSerializableProperties() {
+    internal class SimpleObjectThatDoesNotHaveAName : IHaveSerialisableProperties {
+        public string Name { get; set; }
+        public int Count { get; set; }
+
+        public virtual SerialisableProperties GetSerializableProperties() {
             return new SerialisableProperties(new List<Property> {
                 new StringProperty {
                     Key = "name",

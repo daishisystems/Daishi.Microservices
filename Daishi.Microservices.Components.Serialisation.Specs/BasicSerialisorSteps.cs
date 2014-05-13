@@ -1,5 +1,8 @@
 ﻿#region Includes
 
+using System.IO;
+using System.Text;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 #endregion
@@ -7,24 +10,60 @@ using TechTalk.SpecFlow;
 namespace Daishi.Microservices.Components.Serialisation.Specs {
     [Binding]
     public class BasicSerialisorSteps {
+        private SimpleObject _simpleObject;
+        private SimpleObjectThatDoesNotHaveAName _simpleObjectThatDoesNotHaveAName;
+        private Serialisor _serialisor;
+        private byte[] _serialisedObject;
+
         [Given(@"I have supplied a simple object")]
         public void GivenIHaveSuppliedASimpleObject() {
-            ScenarioContext.Current.Pending();
+            _simpleObject = new SimpleObject {
+                Name = "Simple Object",
+                Count = 1
+            };
+        }
+
+        [Given(@"I have supplied a simple object that does not have a name")]
+        public void GivenIHaveSuppliedASimpleObjectThatDoesNotHaveAName() {
+            _simpleObjectThatDoesNotHaveAName = new SimpleObjectThatDoesNotHaveAName {
+                Name = "Simple Object",
+                Count = 1
+            };
         }
 
         [Given(@"I have instantiated a BasicSerialisor")]
         public void GivenIHaveInstantiatedABasicSerialisor() {
-            ScenarioContext.Current.Pending();
+            _serialisor = new BasicSerialisor();
         }
 
         [When(@"I serialise the simple object")]
         public void WhenISerialiseTheSimpleObject() {
-            ScenarioContext.Current.Pending();
+            _serialisedObject = _serialisor.Serialise(_simpleObject);
+        }
+
+        [When(@"I serialise the simple object that does not have a name")]
+        public void WhenISerialiseTheSimpleObjectThatDoesNotHaveAName() {
+            _serialisedObject = _serialisor.Serialise(_simpleObjectThatDoesNotHaveAName);
         }
 
         [Then(@"the simple object should be serialised correctly")]
         public void ThenTheSimpleObjectShouldBeSerialisedCorrectly() {
-            ScenarioContext.Current.Pending();
+            string metadata;
+
+            using (var reader = new StreamReader(new MemoryStream(_serialisedObject), Encoding.UTF8))
+                metadata = reader.ReadToEnd();
+
+            Assert.AreEqual("\"simpleObject\":{\"name\":\"Simple Object\",\"count\":1}", metadata);
+        }
+
+        [Then(@"the simple object that does not have a name should be serialised correctly")]
+        public void ThenTheSimpleObjectThatDoesNotHaveANameShouldBeSerialisedCorrectly() {
+            string metadata;
+
+            using (var reader = new StreamReader(new MemoryStream(_serialisedObject), Encoding.UTF8))
+                metadata = reader.ReadToEnd();
+
+            Assert.AreEqual("{\"name\":\"Simple Object\",\"count\":1}", metadata);
         }
     }
 }
