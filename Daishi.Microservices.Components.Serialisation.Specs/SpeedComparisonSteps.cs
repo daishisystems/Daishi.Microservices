@@ -21,7 +21,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             _stopwatch.Start();
 
             var parser = new StandardJsonParser();
-            Json.Parse(parser, Resources.LargeJSON);
+            Json.Parse(parser, Resources.LargeJSON, "response");
             var response = parser.Json;
 
             _stopwatch.Stop();
