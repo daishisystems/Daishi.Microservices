@@ -87,14 +87,20 @@
       <DependentUpon>JsonPropertyValidator.feature</DependentUpon>
     </Compile>
     <Compile Include="JsonPropertyValidatorSteps.cs" />
+    <Compile Include="ObjectWithSimpleAndArrayProperties.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ObjectWithSimpleAndArrayProperties.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectWithSimpleAndArrayPropertiesSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReasonablyComplexObject.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SimpleObject.cs" />
-    <Compile Include="SimpleObjectContainingAnArrayProperty.cs" />
     <Compile Include="SimpleObjectContainingAnArrayPropertyWithoutObjectName.cs" />
     <Compile Include="SimpleObjectThatDoesNotHaveAName.cs" />
     <Compile Include="SpeedComparison.feature.cs">
@@ -135,6 +141,10 @@
     <None Include="JsonPropertyValidator.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>JsonPropertyValidator.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ObjectWithSimpleAndArrayProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ObjectWithSimpleAndArrayProperties.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="SpeedComparison.feature">

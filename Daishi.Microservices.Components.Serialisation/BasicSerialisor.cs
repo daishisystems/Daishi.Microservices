@@ -8,8 +8,9 @@ using System.Text;
 
 namespace Daishi.Microservices.Components.Serialisation {
     public class BasicSerialisor : Serialisor {
-        public override byte[] Serialise(IHaveSerialisableProperties @object) {
-            var serialisableProperties = @object.GetSerializableProperties();
+        public BasicSerialisor(SerialisableProperties serialisableProperties) : base(serialisableProperties) {}
+
+        public override byte[] Serialise() {
             using (var writer = new StreamWriter(new MemoryStream(), Encoding.UTF8)) {
                 if (!string.IsNullOrEmpty(serialisableProperties.ObjectName))
                     writer.Write(string.Concat("\"", serialisableProperties.ObjectName, "\":"));

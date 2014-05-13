@@ -1,5 +1,6 @@
 ﻿#region Includes
 
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -8,19 +9,29 @@ using System.Text;
 
 namespace Daishi.Microservices.Components.Serialisation {
     public class ArraySerialisor : Serialisor {
-        public override byte[] Serialise(IHaveSerialisableProperties @object) {
-            var serialisableProperties = @object.GetSerializableProperties();
+        private readonly string _objectName;
+        private readonly IEnumerable<object> _object;
+
+        public ArraySerialisor(IEnumerable<object> @object) {
+            _object = @object;
+        }
+
+        public ArraySerialisor(string objectName, IEnumerable<object> @object) : this(@object) {
+            _objectName = objectName;
+        }
+
+        public override byte[] Serialise() {
             using (var writer = new StreamWriter(new MemoryStream(), Encoding.UTF8)) {
-                if (!string.IsNullOrEmpty(serialisableProperties.ObjectName))
-                    writer.Write(string.Concat("\"", serialisableProperties.ObjectName, "\":"));
+                if (!string.IsNullOrEmpty(_objectName))
+                    writer.Write(string.Concat("\"", _objectName, "\":"));
                 writer.Write("[");
 
-                var properties = serialisableProperties.Properties.ToList();
+                var values = _object.ToList();
                 var valueWriter = new ValueWriter();
 
-                for (var i = 0; i < properties.Count; i++) {
-                    var isFinalItem = i.Equals(properties.Count - 1);
-                    valueWriter.Write(properties[i].FormatValue(), isFinalItem, writer);
+                for (var i = 0; i < values.Count; i++) {
+                    var isFinalItem = i.Equals(values.Count - 1);
+                    valueWriter.Write(values[i], isFinalItem, writer);
                 }
 
                 writer.Write("]");

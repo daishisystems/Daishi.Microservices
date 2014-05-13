@@ -6,11 +6,11 @@ using System.Linq;
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation.Specs {
-    internal class SimpleObjectContainingAnArrayProperty : IHaveSerialisableProperties {
+    internal class SimpleObjectContainingAnArrayPropertyWithoutObjectName : IHaveSerialisableProperties {
         public string[] Values { get; set; }
 
         public virtual SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties("simpleObject", new List<Property>(
+            return new SerialisableProperties(new List<Property>(
                 Values.Select(v => new StringProperty {
                     Value = v
                 })));

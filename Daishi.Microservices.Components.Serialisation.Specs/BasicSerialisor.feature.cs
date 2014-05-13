@@ -32,8 +32,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BasicSerialisor", "In order to ensure that simple objects can be serialised\nAs a BasicSerialisor\nI w" +
-                    "ant to serialise a simple object", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BasicSerialisor", "In order to ensure that simple objects can be serialised\r\nAs a BasicSerialisor\r\nI" +
+                    " want to serialise a simple object", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -94,9 +94,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
  testRunner.Given("I have supplied a simple object that does not have a name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
- testRunner.And("I have instantiated a BasicSerialisor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have instantiated a BasicSerialisor targetting an object that does not have a n" +
+                    "ame", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.When("I serialise the simple object that does not have a name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I serialise the simple object", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
  testRunner.Then("the simple object that does not have a name should be serialised correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

@@ -33,17 +33,17 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Given(@"I have instantiated a BasicSerialisor")]
         public void GivenIHaveInstantiatedABasicSerialisor() {
-            _serialisor = new BasicSerialisor();
+            _serialisor = new BasicSerialisor(_simpleObject.GetSerializableProperties());
+        }
+
+        [Given(@"I have instantiated a BasicSerialisor targetting an object that does not have a name")]
+        public void GivenIHaveInstantiatedABasicSerialisorTargettingAnObjectThatDoesNotHaveAName() {
+            _serialisor = new BasicSerialisor(_simpleObjectThatDoesNotHaveAName.GetSerializableProperties());
         }
 
         [When(@"I serialise the simple object")]
         public void WhenISerialiseTheSimpleObject() {
-            _serialisedObject = _serialisor.Serialise(_simpleObject);
-        }
-
-        [When(@"I serialise the simple object that does not have a name")]
-        public void WhenISerialiseTheSimpleObjectThatDoesNotHaveAName() {
-            _serialisedObject = _serialisor.Serialise(_simpleObjectThatDoesNotHaveAName);
+            _serialisedObject = _serialisor.Serialise();
         }
 
         [Then(@"the simple object should be serialised correctly")]

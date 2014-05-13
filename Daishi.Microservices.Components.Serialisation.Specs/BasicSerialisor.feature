@@ -11,6 +11,6 @@ Scenario: Serialise a simple object
 
 Scenario: Serialise a simple object that does not have a name
 	Given I have supplied a simple object that does not have a name
-	And I have instantiated a BasicSerialisor
-	When I serialise the simple object that does not have a name
+	And I have instantiated a BasicSerialisor targetting an object that does not have a name
+	When I serialise the simple object 
 	Then the simple object that does not have a name should be serialised correctly
