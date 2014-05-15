@@ -1,6 +1,7 @@
 ﻿#region Includes
 
 using System.IO;
+using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -24,7 +25,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         [Given(@"I instantiated an ArraySerialisor targetting an array property and without an object-name")]
         public void GivenIInstantiatedAnArraySerialisorTargettingAnArrayPropertyAndWithoutAnObject_Name() {
             _arraySerialisor = new ArraySerialisor(
-                _simpleObjectContainingAnArrayPropertyWithoutObjectName.Values);
+                _simpleObjectContainingAnArrayPropertyWithoutObjectName.Values.AsEnumerable(), 
+                JsonPropertyType.Alphabetic);
         }
 
         [When(@"I serialise the simple object with array properties")]

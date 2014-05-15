@@ -8,15 +8,24 @@ using System.Text;
 
 namespace Daishi.Microservices.Components.Serialisation {
     public class BasicSerialisor : Serialisor {
-        public BasicSerialisor(SerialisableProperties serialisableProperties) : base(serialisableProperties) {}
+        private readonly SerialisableProperties _serialisableProperties;
+        private bool _encapsulate;
+
+        public BasicSerialisor(SerialisableProperties serialisableProperties, bool encapsulate) {
+            _serialisableProperties = serialisableProperties;
+            _encapsulate = encapsulate;
+        }
 
         public override byte[] Serialise() {
-            using (var writer = new StreamWriter(new MemoryStream(), Encoding.UTF8)) {
-                if (!string.IsNullOrEmpty(serialisableProperties.ObjectName))
-                    writer.Write(string.Concat("\"", serialisableProperties.ObjectName, "\":"));
-                writer.Write("{");
+            using (var writer = new StreamWriter(new MemoryStream(), new UTF8Encoding(false))) {
+                if (!string.IsNullOrEmpty(_serialisableProperties.ObjectName)) {
+                    _encapsulate = true;
+                    writer.Write(string.Concat("\"", _serialisableProperties.ObjectName, "\":"));
+                }
+                if (_encapsulate)
+                    writer.Write("{");
 
-                var properties = serialisableProperties.Properties.ToList();
+                var properties = _serialisableProperties.Properties.ToList();
                 var propertyWriter = new PropertyWriter();
 
                 for (var i = 0; i < properties.Count; i++) {
@@ -24,7 +33,8 @@ namespace Daishi.Microservices.Components.Serialisation {
                     propertyWriter.Write(properties[i], isFinalItem, writer);
                 }
 
-                writer.Write("}");
+                if (_encapsulate)
+                    writer.Write("}");
                 writer.Flush();
                 return ((MemoryStream) writer.BaseStream).ToArray();
             }

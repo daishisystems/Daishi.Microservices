@@ -49,6 +49,7 @@
     <Compile Include="JsonObjectType.cs" />
     <Compile Include="JsonParser.cs" />
     <Compile Include="JsonPropertyFinder.cs" />
+    <Compile Include="JsonPropertyType.cs" />
     <Compile Include="JsonPropertyValidator.cs" />
     <Compile Include="JsonReader.cs" />
     <Compile Include="NumericProperty.cs" />
