@@ -11,8 +11,12 @@ namespace Daishi.Microservices.Components.Serialisation {
         private readonly SerialisableProperties _serialisableProperties;
         private bool _encapsulate;
 
-        public BasicSerialisor(SerialisableProperties serialisableProperties, bool encapsulate) {
+        public BasicSerialisor(SerialisableProperties serialisableProperties) {
             _serialisableProperties = serialisableProperties;
+        }
+
+        public BasicSerialisor(SerialisableProperties serialisableProperties,
+            bool encapsulate) : this(serialisableProperties) {
             _encapsulate = encapsulate;
         }
 

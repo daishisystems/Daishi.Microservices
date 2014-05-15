@@ -87,6 +87,12 @@
       <DependentUpon>JsonPropertyValidator.feature</DependentUpon>
     </Compile>
     <Compile Include="JsonPropertyValidatorSteps.cs" />
+    <Compile Include="JsonSerialisor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JsonSerialisor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="JsonSerialisorSteps.cs" />
     <Compile Include="ObjectWithSimpleAndArrayProperties.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -141,6 +147,10 @@
     <None Include="JsonPropertyValidator.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>JsonPropertyValidator.feature.cs</LastGenOutput>
+    </None>
+    <None Include="JsonSerialisor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JsonSerialisor.feature.cs</LastGenOutput>
     </None>
     <None Include="ObjectWithSimpleAndArrayProperties.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

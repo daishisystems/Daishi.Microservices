@@ -27,7 +27,14 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         [When(@"I serialise the object")]
         public void WhenISerialiseTheObject() {
             var serialisableProperties = _reasonablyComplexObject.GetSerializableProperties();
-            _serialisedObject = Json.Serialise(new BasicSerialisor(serialisableProperties, false), serialisableProperties);
+            var writer = new BinaryWriter(new MemoryStream(), new UTF8Encoding(false));
+
+            using (var jsonSerialisor = new StandardJsonSerialisor(writer)) {
+                Json.Serialise(jsonSerialisor, new BasicSerialisor(serialisableProperties),
+                    serialisableProperties.Serialisors);
+
+                _serialisedObject = jsonSerialisor.SerialisedObject;
+            }
         }
 
         [Then(@"the object should be serialised correctly")]
@@ -37,7 +44,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             using (var reader = new StreamReader(new MemoryStream(_serialisedObject), Encoding.UTF8))
                 metadata = reader.ReadToEnd();
 
-            Assert.AreEqual("{\"name\":\"Reasonably Complex Object\",\"count\":100,\"strings\":[\"One\",\"Two\",\"Three\"],\"floats\":[1,2,3]}", metadata);
+            Assert.AreEqual(Resources.SerialisedReasonablyComplexObject, metadata);
         }
     }
 }
