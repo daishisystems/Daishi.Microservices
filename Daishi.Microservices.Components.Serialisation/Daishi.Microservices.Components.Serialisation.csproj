@@ -40,8 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArraySerialisor.cs" />
-    <Compile Include="BasicSerialisor.cs" />
+    <Compile Include="StandardSerialisor.cs" />
     <Compile Include="CharacterFinder.cs" />
+    <Compile Include="ComplexArrayPropertySerialisor.cs" />
     <Compile Include="IHaveSerialisableProperties.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="JsonContainerFactory.cs" />

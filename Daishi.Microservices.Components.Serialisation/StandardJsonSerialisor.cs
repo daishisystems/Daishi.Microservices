@@ -34,6 +34,11 @@ namespace Daishi.Microservices.Components.Serialisation {
                 var isFinalItem = i.Equals(serialisorList.Count - 1);
                 if (!isFinalItem)
                     writer.Write(comma);
+
+                if (serialisor.SerialisableProperties == null || serialisor.SerialisableProperties.Serialisors == null) continue;
+                var children = serialisor.SerialisableProperties.Serialisors;
+                if (children != null)
+                    SerialiseComplexProperties(hasSimpleProperties, children);
             }
         }
 

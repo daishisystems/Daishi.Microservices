@@ -20,7 +20,8 @@ namespace Daishi.Microservices.Components.Serialisation {
             }
         }
 
-        public static void Serialise(JsonSerialisor jsonSerialisor, Serialisor serialisor, IEnumerable<Serialisor> serialisors) {
+        public static void Serialise(JsonSerialisor jsonSerialisor, Serialisor serialisor, 
+            IEnumerable<Serialisor> serialisors) {
             jsonSerialisor.WriteStart();
             var hasSimpleProperties = jsonSerialisor.SerialiseSimpleProperties(serialisor);
             jsonSerialisor.SerialiseComplexProperties(hasSimpleProperties, serialisors);

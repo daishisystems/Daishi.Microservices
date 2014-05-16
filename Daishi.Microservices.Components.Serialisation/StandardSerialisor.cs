@@ -7,29 +7,30 @@ using System.Text;
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation {
-    public class BasicSerialisor : Serialisor {
-        private readonly SerialisableProperties _serialisableProperties;
-        private bool _encapsulate;
+    public class StandardSerialisor : Serialisor {
+        
 
-        public BasicSerialisor(SerialisableProperties serialisableProperties) {
-            _serialisableProperties = serialisableProperties;
+        
+
+        public StandardSerialisor(SerialisableProperties serialisableProperties) {
+            SerialisableProperties = serialisableProperties;
         }
 
-        public BasicSerialisor(SerialisableProperties serialisableProperties,
+        public StandardSerialisor(SerialisableProperties serialisableProperties,
             bool encapsulate) : this(serialisableProperties) {
-            _encapsulate = encapsulate;
+            base.encapsulate = encapsulate;
         }
 
         public override byte[] Serialise() {
             using (var writer = new StreamWriter(new MemoryStream(), new UTF8Encoding(false))) {
-                if (!string.IsNullOrEmpty(_serialisableProperties.ObjectName)) {
-                    _encapsulate = true;
-                    writer.Write(string.Concat("\"", _serialisableProperties.ObjectName, "\":"));
+                if (!string.IsNullOrEmpty(SerialisableProperties.ObjectName)) {
+                    encapsulate = true;
+                    writer.Write(string.Concat("\"", SerialisableProperties.ObjectName, "\":"));
                 }
-                if (_encapsulate)
+                if (encapsulate)
                     writer.Write("{");
 
-                var properties = _serialisableProperties.Properties.ToList();
+                var properties = SerialisableProperties.Properties.ToList();
                 var propertyWriter = new PropertyWriter();
 
                 for (var i = 0; i < properties.Count; i++) {
@@ -37,7 +38,9 @@ namespace Daishi.Microservices.Components.Serialisation {
                     propertyWriter.Write(properties[i], isFinalItem, writer);
                 }
 
-                if (_encapsulate)
+                // todo: Serialise serialisers...
+
+                if (encapsulate)
                     writer.Write("}");
                 writer.Flush();
                 return ((MemoryStream) writer.BaseStream).ToArray();

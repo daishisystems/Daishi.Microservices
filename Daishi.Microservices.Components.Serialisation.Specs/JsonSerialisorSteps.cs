@@ -33,7 +33,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         [When(@"I serialise the POCO")]
         public void WhenISerialiseThePOCO() {
             var serialisableProperties = _reasonablyComplexObject.GetSerializableProperties();
-            Json.Serialise(_jsonSerialisor, new BasicSerialisor(serialisableProperties), serialisableProperties.Serialisors);
+            Json.Serialise(_jsonSerialisor, new StandardSerialisor(serialisableProperties), serialisableProperties.Serialisors);
         }
 
         [Then(@"the POCO should be serialised")]

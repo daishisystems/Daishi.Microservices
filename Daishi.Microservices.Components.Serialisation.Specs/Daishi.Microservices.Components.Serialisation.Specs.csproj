@@ -69,6 +69,14 @@
       <DependentUpon>CharacterFinder.feature</DependentUpon>
     </Compile>
     <Compile Include="CharacterFinderSteps.cs" />
+    <Compile Include="ComplexObject.cs" />
+    <Compile Include="ComplexProperty.cs" />
+    <Compile Include="ComplexPropertySerialisor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComplexPropertySerialisor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ComplexPropertySerialisorSteps.cs" />
     <Compile Include="JsonObjectBuilder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,6 +143,10 @@
     <None Include="CharacterFinder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CharacterFinder.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ComplexPropertySerialisor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ComplexPropertySerialisor.feature.cs</LastGenOutput>
     </None>
     <None Include="JsonObjectBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
