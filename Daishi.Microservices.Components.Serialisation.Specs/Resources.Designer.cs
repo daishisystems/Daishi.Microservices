@@ -89,6 +89,15 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {&quot;name&quot;:&quot;An Object&quot;,&quot;description&quot;:&quot;A generic object&quot;,&quot;array&quot;:[{&quot;name&quot;:&quot;Array Object #1&quot;,&quot;description&quot;:&quot;The 1st array object&quot;},{&quot;name&quot;:&quot;Array Object #2&quot;,&quot;description&quot;:&quot;The 2nd array object&quot;}]}.
+        /// </summary>
+        internal static string RawJSON {
+            get {
+                return ResourceManager.GetString("RawJSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;arrayOfComplexObjects&quot;:[{&quot;name&quot;:&quot;#1&quot;,&quot;description&quot;:&quot;Complex Array Object #1&quot;},{&quot;name&quot;:&quot;#2&quot;,&quot;description&quot;:&quot;Complex Array Object #2&quot;},{&quot;name&quot;:&quot;#3&quot;,&quot;description&quot;:&quot;Complex Array Object #3&quot;}].
         /// </summary>
         internal static string SerialisedArrayOfComplexObjects {
@@ -103,6 +112,15 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         internal static string SerialisedComplexObject {
             get {
                 return ResourceManager.GetString("SerialisedComplexObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;objectWithARawJsonProperty&quot;:{&quot;raw&quot;:{&quot;name&quot;:&quot;An Object&quot;,&quot;description&quot;:&quot;A generic object&quot;,&quot;array&quot;:[{&quot;name&quot;:&quot;Array Object #1&quot;,&quot;description&quot;:&quot;The 1st array object&quot;},{&quot;name&quot;:&quot;Array Object #2&quot;,&quot;description&quot;:&quot;The 2nd array object&quot;}]}}.
+        /// </summary>
+        internal static string SerialisedObjectWithARawJSONProperty {
+            get {
+                return ResourceManager.GetString("SerialisedObjectWithARawJSONProperty", resourceCulture);
             }
         }
         

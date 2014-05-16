@@ -108,6 +108,7 @@
       <DependentUpon>JsonSerialisor.feature</DependentUpon>
     </Compile>
     <Compile Include="JsonSerialisorSteps.cs" />
+    <Compile Include="ObjectWithARawJsonProperty.cs" />
     <Compile Include="ObjectWithSimpleAndArrayProperties.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,6 +122,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SerialiseRawJSON.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SerialiseRawJSON.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SerialiseRawJSONSteps.cs" />
     <Compile Include="SimpleObject.cs" />
     <Compile Include="SimpleObjectContainingAnArrayPropertyWithoutObjectName.cs" />
     <Compile Include="SimpleObjectThatDoesNotHaveAName.cs" />
@@ -180,6 +187,10 @@
       <LastGenOutput>ObjectWithSimpleAndArrayProperties.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="SerialiseRawJSON.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SerialiseRawJSON.feature.cs</LastGenOutput>
+    </None>
     <None Include="SpeedComparison.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SpeedComparison.feature.cs</LastGenOutput>

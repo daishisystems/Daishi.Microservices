@@ -22,10 +22,13 @@ namespace Daishi.Microservices.Components.Serialisation {
         }
 
         public override void SerialiseComplexProperties(bool hasSimpleProperties, IEnumerable<Serialisor> serialisors) {
-            if (hasSimpleProperties)
-                writer.Write(comma);
+            if (serialisors == null) return;
 
             var serialisorList = serialisors.ToList();
+            if (!serialisorList.Any()) return;
+
+            if (hasSimpleProperties)
+                writer.Write(comma);
 
             for (var i = 0; i < serialisorList.Count; i++) {
                 var serialisor = serialisorList[i];
