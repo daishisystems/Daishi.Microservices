@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Daishi.Microservices.Components.Serialisation {
     public class SerialisableProperties {
-        public string ObjectName { get; private set; }
+        public string ObjectName { get; set; }
         public IEnumerable<Property> Properties { get; private set; }
         public IEnumerable<Serialisor> Serialisors { get; set; }
 

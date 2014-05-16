@@ -7,15 +7,15 @@ using System.Text;
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation {
-    public class BasicSerialisor : Serialisor {
+    public class PropertiesSerialisor : Serialisor {
         private readonly SerialisableProperties _serialisableProperties;
         private bool _encapsulate;
 
-        public BasicSerialisor(SerialisableProperties serialisableProperties) {
+        public PropertiesSerialisor(SerialisableProperties serialisableProperties) {
             _serialisableProperties = serialisableProperties;
         }
 
-        public BasicSerialisor(SerialisableProperties serialisableProperties,
+        public PropertiesSerialisor(SerialisableProperties serialisableProperties,
             bool encapsulate) : this(serialisableProperties) {
             _encapsulate = encapsulate;
         }
