@@ -98,6 +98,15 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {&quot;name&quot;:&quot;Complex Object&quot;,&quot;description&quot;:&quot;A complex object&quot;,&quot;complexArrayObjects&quot;:[{&quot;name&quot;:&quot;Array Object #1&quot;,&quot;description&quot;:&quot;The 1st array object&quot;},{&quot;name&quot;:&quot;Array Object #2&quot;,&quot;description&quot;:&quot;The 2nd array object&quot;}],&quot;doubles&quot;:[1,2.5,10.8]}.
+        /// </summary>
+        internal static string SerialisedComplexObject {
+            get {
+                return ResourceManager.GetString("SerialisedComplexObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {&quot;name&quot;:&quot;Reasonably Complex Object&quot;,&quot;count&quot;:100,&quot;strings&quot;:[&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;],&quot;floats&quot;:[1,2,3]}.
         /// </summary>
         internal static string SerialisedReasonablyComplexObject {

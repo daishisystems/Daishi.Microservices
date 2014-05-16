@@ -77,6 +77,13 @@
       <DependentUpon>ComplexArraySerialisor.feature</DependentUpon>
     </Compile>
     <Compile Include="ComplexArraySerialisorSteps.cs" />
+    <Compile Include="ComplexObject.cs" />
+    <Compile Include="ComplexObjectSerialisation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComplexObjectSerialisation.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ComplexObjectSerialisationSteps.cs" />
     <Compile Include="JsonObjectBuilder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +154,10 @@
     <None Include="ComplexArraySerialisor.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ComplexArraySerialisor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ComplexObjectSerialisation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ComplexObjectSerialisation.feature.cs</LastGenOutput>
     </None>
     <None Include="JsonObjectBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

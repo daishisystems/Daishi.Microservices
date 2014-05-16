@@ -136,6 +136,9 @@
   <data name="SerialisedArrayOfComplexObjects" xml:space="preserve">
     <value>"arrayOfComplexObjects":[{"name":"#1","description":"Complex Array Object #1"},{"name":"#2","description":"Complex Array Object #2"},{"name":"#3","description":"Complex Array Object #3"}]</value>
   </data>
+  <data name="SerialisedComplexObject" xml:space="preserve">
+    <value>{"name":"Complex Object","description":"A complex object","complexArrayObjects":[{"name":"Array Object #1","description":"The 1st array object"},{"name":"Array Object #2","description":"The 2nd array object"}],"doubles":[1,2.5,10.8]}</value>
+  </data>
   <data name="SerialisedReasonablyComplexObject" xml:space="preserve">
     <value>{"name":"Reasonably Complex Object","count":100,"strings":["One","Two","Three"],"floats":[1,2,3]}</value>
   </data>
