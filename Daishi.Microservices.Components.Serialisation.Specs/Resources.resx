@@ -143,7 +143,7 @@
     <value>{"name":"Complex Object","description":"A complex object","complexArrayObjects":[{"name":"Array Object #1","description":"The 1st array object"},{"name":"Array Object #2","description":"The 2nd array object"}],"doubles":[1,2.5,10.8]}</value>
   </data>
   <data name="SerialisedObjectWithARawJSONProperty" xml:space="preserve">
-    <value>"objectWithARawJsonProperty":{"raw":{"name":"An Object","description":"A generic object","array":[{"name":"Array Object #1","description":"The 1st array object"},{"name":"Array Object #2","description":"The 2nd array object"}]}}</value>
+    <value>{"objectWithARawJsonProperty":{"raw":{"name":"An Object","description":"A generic object","array":[{"name":"Array Object #1","description":"The 1st array object"},{"name":"Array Object #2","description":"The 2nd array object"}]}}}</value>
   </data>
   <data name="SerialisedReasonablyComplexObject" xml:space="preserve">
     <value>{"name":"Reasonably Complex Object","count":100,"strings":["One","Two","Three"],"floats":[1,2,3]}</value>

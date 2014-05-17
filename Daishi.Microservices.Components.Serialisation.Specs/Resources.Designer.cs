@@ -116,7 +116,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &quot;objectWithARawJsonProperty&quot;:{&quot;raw&quot;:{&quot;name&quot;:&quot;An Object&quot;,&quot;description&quot;:&quot;A generic object&quot;,&quot;array&quot;:[{&quot;name&quot;:&quot;Array Object #1&quot;,&quot;description&quot;:&quot;The 1st array object&quot;},{&quot;name&quot;:&quot;Array Object #2&quot;,&quot;description&quot;:&quot;The 2nd array object&quot;}]}}.
+        ///   Looks up a localized string similar to {&quot;objectWithARawJsonProperty&quot;:{&quot;raw&quot;:{&quot;name&quot;:&quot;An Object&quot;,&quot;description&quot;:&quot;A generic object&quot;,&quot;array&quot;:[{&quot;name&quot;:&quot;Array Object #1&quot;,&quot;description&quot;:&quot;The 1st array object&quot;},{&quot;name&quot;:&quot;Array Object #2&quot;,&quot;description&quot;:&quot;The 2nd array object&quot;}]}}}.
         /// </summary>
         internal static string SerialisedObjectWithARawJSONProperty {
             get {
