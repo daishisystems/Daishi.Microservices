@@ -122,6 +122,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SerialisationSpeedComparison.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SerialisationSpeedComparison.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SerialisationSpeedComparisonSteps.cs" />
     <Compile Include="SerialiseRawJSON.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,6 +193,10 @@
       <LastGenOutput>ObjectWithSimpleAndArrayProperties.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="SerialisationSpeedComparison.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SerialisationSpeedComparison.feature.cs</LastGenOutput>
+    </None>
     <None Include="SerialiseRawJSON.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SerialiseRawJSON.feature.cs</LastGenOutput>
