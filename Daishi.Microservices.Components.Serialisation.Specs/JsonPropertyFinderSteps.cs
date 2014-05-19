@@ -1,6 +1,7 @@
 ﻿#region Includes
 
 using System.IO;
+using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -29,8 +30,10 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Then(@"the JsonPropertyFinder will return the property's position in the Stream")]
         public void ThenTheJsonPropertyFinderWillReturnThePropertySPositionInTheStream() {
-            var position = _finder.Find(_jsonProperty);
-            Assert.AreEqual(37L, position);
+            var positions = _finder.Find(_jsonProperty);
+            var firstValidPosition = positions.First(p => p > -1);
+
+            Assert.AreEqual(37L, firstValidPosition);
             _reader.Dispose();
         }
     }

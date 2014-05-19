@@ -67,41 +67,18 @@ namespace Daishi.Microservices.Components.Serialisation.Specs
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate a JSON fragment")]
-        [NUnit.Framework.IgnoreAttribute()]
         public virtual void ValidateAJSONFragment()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate a JSON fragment", new string[] {
-                        "ignore"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate a JSON fragment", ((string[])(null)));
+#line 6
+this.ScenarioSetup(scenarioInfo);
 #line 7
-this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.Given("I have supplied a JSON structure", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
- testRunner.And("I have supplied a JSON fragment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.When("I invoke a JsonPropertyValidator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.Then("the JSON fragment should be validated as a valid JSON property name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate an invalid JSON fragment")]
-        public virtual void ValidateAnInvalidJSONFragment()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate an invalid JSON fragment", ((string[])(null)));
-#line 13
-this.ScenarioSetup(scenarioInfo);
-#line 14
  testRunner.Given("I have supplied a JSON structure where a certain value is the same as a property " +
                     "name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
+#line 8
  testRunner.And("I have supplied a JSON fragment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
- testRunner.When("I invoke a JsonPropertyValidator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
- testRunner.Then("the JSON fragment should be validated as an invalid JSON property name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 9
+ testRunner.Then("the JSON fragment should be validated as a valid JSON property name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

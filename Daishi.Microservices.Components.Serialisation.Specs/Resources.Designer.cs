@@ -61,17 +61,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;name&quot;: [
-        ///        &quot;address&quot;,
-        ///        &quot;test&quot;
-        ///    ],
-        ///    &quot;address&quot;: {
-        ///        &quot;line1&quot;: &quot;1&quot;,
-        ///        &quot;line2&quot;: &quot;Fake Road&quot;,
-        ///        &quot;town&quot;: &quot;Some Town&quot;
-        ///    }
-        ///}.
+        ///   Looks up a localized string similar to {&quot;name&quot;:[&quot;address&quot;,&quot;test&quot;],&quot;address&quot;:{&quot;line1&quot;:&quot;1&quot;,&quot;line2&quot;:&quot;Fake Road&quot;,&quot;town&quot;:&quot;Some Town&quot;}}.
         /// </summary>
         internal static string JSONWithSameValueAsPropertyName {
             get {

@@ -1,5 +1,6 @@
 ﻿#region Includes
 
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -17,8 +18,9 @@ namespace Daishi.Microservices.Components.Serialisation {
             _validator = validator;
         }
 
-        public long Find(string target) {
-            if (string.IsNullOrEmpty(target)) return -1L;
+        public IEnumerable<long> Find(string target) {
+            if (string.IsNullOrEmpty(target))
+                yield break;
 
             var characterFinder = new CharacterFinder(_reader);
             var positions = characterFinder.Find(target[0]);
@@ -26,10 +28,8 @@ namespace Daishi.Microservices.Components.Serialisation {
             if (positions.Select(position => new string(_builder.Build().ToArray()))
                 .Where(word => target.Equals(word))
                 .Any(word => _validator.Validate())) {
-                return _builder.ResetPosition;
+                yield return _builder.ResetPosition;
             }
-
-            return -1L;
         }
     }
 }

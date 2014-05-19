@@ -1,6 +1,7 @@
 ﻿#region Includes
 
 using System.IO;
+using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -21,7 +22,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             var finder = new JsonPropertyFinder(_reader, new WordBuilder(_reader),
                 new JsonPropertyValidator(_reader));
 
-            finder.Find("response");
+            var count = finder.Find("response").Count();
         }
 
         [Given(@"I have instantiated a JsonObjectBuilder")]
