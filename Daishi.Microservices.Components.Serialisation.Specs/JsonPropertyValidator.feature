@@ -9,7 +9,7 @@ Scenario: Validate a JSON fragment
 	And I have supplied a JSON fragment
 	When I invoke a JsonPropertyValidator
 	Then the JSON fragment should be validated as a valid JSON property name
-@ignore
+
 Scenario: Validate an invalid JSON fragment
 	Given I have supplied a JSON structure where a certain value is the same as a property name
 	And I have supplied a JSON fragment

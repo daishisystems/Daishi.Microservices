@@ -15,7 +15,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Given(@"I have supplied a JSON structure")]
         public void GivenIHaveSuppliedAJSONStructure() {
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(Resources.SimpleJSON));
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(Resources.JSONWithSameValueAsPropertyName));
             _reader = new BinaryReader(stream);
         }
 

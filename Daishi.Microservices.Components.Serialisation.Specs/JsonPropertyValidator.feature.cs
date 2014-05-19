@@ -32,8 +32,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "JsonPropertyValidator", "In order to ensure that a given JSON fragment is a valid property name\nAs a JsonP" +
-                    "ropertyValidator\nI want to validate the JSON fragment", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "JsonPropertyValidator", "In order to ensure that a given JSON fragment is a valid property name\r\nAs a Json" +
+                    "PropertyValidator\r\nI want to validate the JSON fragment", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -88,11 +88,9 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate an invalid JSON fragment")]
-        [NUnit.Framework.IgnoreAttribute()]
         public virtual void ValidateAnInvalidJSONFragment()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate an invalid JSON fragment", new string[] {
-                        "ignore"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate an invalid JSON fragment", ((string[])(null)));
 #line 13
 this.ScenarioSetup(scenarioInfo);
 #line 14
