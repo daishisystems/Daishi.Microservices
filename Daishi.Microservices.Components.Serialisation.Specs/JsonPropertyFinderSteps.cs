@@ -24,7 +24,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public void WhenIInvokeAJsonPropertyFinder() {
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(Resources.SimpleJSON));
             _reader = new BinaryReader(stream);
-            _finder = new JsonPropertyFinder(_reader, new WordBuilder(_reader),
+            _finder = new JsonPropertyFinder(new CharacterFinder(_reader), new WordBuilder(_reader),
                 new JsonPropertyValidator(_reader));
         }
 

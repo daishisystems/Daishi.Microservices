@@ -19,7 +19,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public void GivenIHaveFoundAJSONProperty() {
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(Resources.LargeJSON));
             _reader = new BinaryReader(stream);
-            var finder = new JsonPropertyFinder(_reader, new WordBuilder(_reader),
+            var finder = new JsonPropertyFinder(new CharacterFinder(_reader), new WordBuilder(_reader),
                 new JsonPropertyValidator(_reader));
 
             var count = finder.Find("response").Count();

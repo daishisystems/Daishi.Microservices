@@ -23,7 +23,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Given(@"I have supplied a JSON fragment")]
         public void GivenIHaveSuppliedAJSONFragment() {
-            var finder = new JsonPropertyFinder(_reader, new WordBuilder(_reader),
+            var finder = new JsonPropertyFinder(new CharacterFinder(_reader), new WordBuilder(_reader),
                 new JsonPropertyValidator(_reader));
             _results = finder.Find("address").ToList();
         }

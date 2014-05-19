@@ -12,7 +12,7 @@ namespace Daishi.Microservices.Components.Serialisation {
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(data));
 
             using (var reader = new BinaryReader(stream)) {
-                parser.FindProperty(new JsonPropertyFinder(reader,
+                parser.FindProperty(new JsonPropertyFinder(new CharacterFinder(reader),
                     new WordBuilder(reader),
                     new JsonPropertyValidator(reader)), propertyName);
                 parser.BuildObject(new JsonObjectBuilder(reader, new JsonContainerFactory(),
