@@ -23,10 +23,16 @@ namespace Daishi.Microservices.Components.Serialisation {
 
             var positions = _finder.Find(target[0]);
 
-            if (positions.Select(position => new string(_builder.Build().ToArray()))
-                .Where(word => target.Equals(word))
-                .Any(word => _validator.Validate())) {
-                yield return _builder.ResetPosition;
+            foreach (var position in positions) {
+                var nextCharacters = _builder.Build();
+                var word = nextCharacters.Aggregate(string.Empty,
+                    (current, nextCharacter) => current + nextCharacter);
+
+                if (!target.Equals(word)) continue;
+                var isValid = _validator.Validate();
+
+                if (isValid)
+                    yield return _builder.CurrentPosition;
             }
         }
     }

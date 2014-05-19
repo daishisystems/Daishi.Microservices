@@ -22,7 +22,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             var finder = new JsonPropertyFinder(new CharacterFinder(_reader), new WordBuilder(_reader),
                 new JsonPropertyValidator(_reader));
 
-            var count = finder.Find("response").Count();
+            var first = finder.Find("response").First();
         }
 
         [Given(@"I have instantiated a JsonObjectBuilder")]
