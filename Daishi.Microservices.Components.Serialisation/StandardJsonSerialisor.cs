@@ -35,8 +35,9 @@ namespace Daishi.Microservices.Components.Serialisation {
                 writer.Write(bracket);
         }
 
-        public override void WriteEnd() {
-            writer.Write((byte) 125);
+        public override void WriteEnd(bool isNamed) {
+            if (isNamed)
+                writer.Write((byte) 125);
             writer.Flush();
             SerialisedObject = ((MemoryStream) writer.BaseStream).ToArray();
         }

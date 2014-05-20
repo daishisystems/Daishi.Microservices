@@ -7,6 +7,7 @@ using System.Collections.Generic;
 namespace Daishi.Microservices.Components.Serialisation {
     public abstract class Serialisor {
         public IEnumerable<Serialisor> InnerSerialisors { get; set; }
+        public bool IsNamed { get; protected set; }
         public abstract byte[] Serialise(bool isNested = false);
     }
 }

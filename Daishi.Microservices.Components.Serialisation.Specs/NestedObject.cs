@@ -10,7 +10,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public Level1 Level1 { get; set; }
 
         public SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties("nestedObject", new List<Property> {
+            return new SerialisableProperties(new List<Property> {
                 new StringProperty {
                     Key = "name",
                     Value = Name

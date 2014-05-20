@@ -115,7 +115,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {&quot;nestedObject&quot;:{&quot;name&quot;:&quot;Nested Object&quot;,&quot;level1&quot;:{&quot;name&quot;:&quot;Level1&quot;,&quot;description&quot;:&quot;Level #1&quot;,&quot;count&quot;:1,&quot;level2&quot;:{&quot;name&quot;:&quot;Level2&quot;,&quot;description&quot;:&quot;Level #2&quot;,&quot;count&quot;:2,&quot;level3&quot;:{&quot;name&quot;:&quot;Level3&quot;,&quot;description&quot;:&quot;Level #3&quot;,&quot;count&quot;:3},&quot;strings&quot;:[&quot;First&quot;,&quot;Second&quot;,&quot;Third&quot;]}}}}.
+        ///   Looks up a localized string similar to {&quot;name&quot;:&quot;Nested Object&quot;,&quot;level1&quot;:{&quot;name&quot;:&quot;Level1&quot;,&quot;description&quot;:&quot;Level #1&quot;,&quot;count&quot;:1,&quot;level2&quot;:{&quot;name&quot;:&quot;Level2&quot;,&quot;description&quot;:&quot;Level #2&quot;,&quot;count&quot;:2,&quot;level3&quot;:{&quot;name&quot;:&quot;Level3&quot;,&quot;description&quot;:&quot;Level #3&quot;,&quot;count&quot;:3},&quot;strings&quot;:[&quot;First&quot;,&quot;Second&quot;,&quot;Third&quot;]}}}.
         /// </summary>
         internal static string SerialisedNestedObject {
             get {

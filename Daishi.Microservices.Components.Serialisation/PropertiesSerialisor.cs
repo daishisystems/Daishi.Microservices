@@ -14,6 +14,7 @@ namespace Daishi.Microservices.Components.Serialisation {
         public PropertiesSerialisor(SerialisableProperties serialisableProperties) {
             _serialisableProperties = serialisableProperties;
             InnerSerialisors = serialisableProperties.Serialisors;
+            IsNamed = !string.IsNullOrEmpty(serialisableProperties.ObjectName);
         }
 
         public PropertiesSerialisor(SerialisableProperties serialisableProperties,

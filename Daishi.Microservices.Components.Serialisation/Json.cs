@@ -27,7 +27,7 @@ namespace Daishi.Microservices.Components.Serialisation {
         public static void Serialise(JsonSerialisor jsonSerialisor, Serialisor serialisor) {
             jsonSerialisor.WriteStart();
             jsonSerialisor.Serialise(serialisor);
-            jsonSerialisor.WriteEnd();
+            jsonSerialisor.WriteEnd(serialisor.IsNamed);
         }
     }
 }

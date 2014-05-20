@@ -16,7 +16,7 @@ namespace Daishi.Microservices.Components.Serialisation {
 
         public abstract void WriteStart();
         public abstract void Serialise(Serialisor serialisor);
-        public abstract void WriteEnd();
+        public abstract void WriteEnd(bool isNamed);
 
         void IDisposable.Dispose() {
             Close();
