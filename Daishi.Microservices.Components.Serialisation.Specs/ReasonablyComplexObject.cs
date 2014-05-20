@@ -12,6 +12,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public double Count { get; set; }
         public IEnumerable<string> Strings { get; set; }
         public float[] Floats { get; set; }
+        public Level2 Level2 { get; set; }
 
         public SerialisableProperties GetSerializableProperties() {
             return new SerialisableProperties("reasonablyComplexObject", new List<Property> {
@@ -27,7 +28,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
                 new ArraySerialisor("strings", Strings, JsonPropertyType.Alphabetic),
                 new ArraySerialisor("floats", Floats
                     .Select(f => f.ToString(CultureInfo.InvariantCulture))
-                    .AsEnumerable(), JsonPropertyType.Numeric)
+                    .AsEnumerable(), JsonPropertyType.Numeric),
+                new PropertiesSerialisor(Level2.GetSerializableProperties())
             });
         }
     }

@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArraySerialisor.cs" />
-    <Compile Include="DeepSerialisor.cs" />
     <Compile Include="PropertiesSerialisor.cs" />
     <Compile Include="CharacterFinder.cs" />
     <Compile Include="ComplexArraySerialisor.cs" />

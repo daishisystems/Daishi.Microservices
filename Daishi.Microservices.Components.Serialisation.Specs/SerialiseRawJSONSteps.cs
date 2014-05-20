@@ -26,8 +26,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             var serialisableProperties = _objectWithARawJsonProperty.GetSerializableProperties();
 
             using (var serialisor = new StandardJsonSerialisor(writer)) {
-                Json.Serialise(serialisor, new PropertiesSerialisor(serialisableProperties),
-                    serialisableProperties.Serialisors);
+                Json.Serialise(serialisor, new PropertiesSerialisor(serialisableProperties));
                 _serialisedObject = serialisor.SerialisedObject;
             }
         }

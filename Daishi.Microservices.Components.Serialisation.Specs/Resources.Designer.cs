@@ -106,7 +106,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {&quot;name&quot;:&quot;Complex Object&quot;,&quot;description&quot;:&quot;A complex object&quot;,&quot;complexArrayObjects&quot;:[{&quot;name&quot;:&quot;Array Object #1&quot;,&quot;description&quot;:&quot;The 1st array object&quot;},{&quot;name&quot;:&quot;Array Object #2&quot;,&quot;description&quot;:&quot;The 2nd array object&quot;}],&quot;doubles&quot;:[1,2.5,10.8]}.
+        ///   Looks up a localized string similar to {&quot;complexObject&quot;:{&quot;name&quot;:&quot;Complex Object&quot;,&quot;description&quot;:&quot;A complex object&quot;,&quot;complexArrayObjects&quot;:[{&quot;name&quot;:&quot;Array Object #1&quot;,&quot;description&quot;:&quot;The 1st array object&quot;},{&quot;name&quot;:&quot;Array Object #2&quot;,&quot;description&quot;:&quot;The 2nd array object&quot;}],&quot;doubles&quot;:[1,2.5,10.8]}}.
         /// </summary>
         internal static string SerialisedComplexObject {
             get {
@@ -115,7 +115,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {&quot;name&quot;:&quot;Nested Object&quot;,&quot;level1&quot;:{&quot;name&quot;:&quot;Level1&quot;,&quot;description&quot;:&quot;Level #1&quot;,&quot;count&quot;:1,&quot;level2&quot;:{&quot;name&quot;:&quot;Level2&quot;,&quot;description&quot;:&quot;Level #2&quot;,&quot;count&quot;:2,&quot;level3&quot;:{&quot;name&quot;:&quot;Level3&quot;,&quot;description&quot;:&quot;Level #3&quot;,&quot;count&quot;:3},&quot;strings&quot;:[&quot;First&quot;,&quot;Second&quot;,&quot;Third&quot;]}}}.
+        ///   Looks up a localized string similar to {&quot;nestedObject&quot;:{&quot;name&quot;:&quot;Nested Object&quot;,&quot;level1&quot;:{&quot;name&quot;:&quot;Level1&quot;,&quot;description&quot;:&quot;Level #1&quot;,&quot;count&quot;:1,&quot;level2&quot;:{&quot;name&quot;:&quot;Level2&quot;,&quot;description&quot;:&quot;Level #2&quot;,&quot;count&quot;:2,&quot;level3&quot;:{&quot;name&quot;:&quot;Level3&quot;,&quot;description&quot;:&quot;Level #3&quot;,&quot;count&quot;:3},&quot;strings&quot;:[&quot;First&quot;,&quot;Second&quot;,&quot;Third&quot;]}}}}.
         /// </summary>
         internal static string SerialisedNestedObject {
             get {
@@ -133,7 +133,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {&quot;name&quot;:&quot;Reasonably Complex Object&quot;,&quot;count&quot;:100,&quot;strings&quot;:[&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;],&quot;floats&quot;:[1,2,3]}.
+        ///   Looks up a localized string similar to {&quot;reasonablyComplexObject&quot;:{&quot;name&quot;:&quot;Reasonably Complex Object&quot;,&quot;count&quot;:100,&quot;strings&quot;:[&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;],&quot;floats&quot;:[1,2,3],&quot;level2&quot;:{&quot;name&quot;:&quot;Level2&quot;,&quot;description&quot;:&quot;Level #2&quot;,&quot;count&quot;:2,&quot;level3&quot;:{&quot;name&quot;:&quot;Level3&quot;,&quot;description&quot;:&quot;Level #3&quot;,&quot;count&quot;:3},&quot;strings&quot;:[&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;]}}}.
         /// </summary>
         internal static string SerialisedReasonablyComplexObject {
             get {

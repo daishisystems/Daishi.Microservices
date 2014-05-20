@@ -20,7 +20,20 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
                 Name = "Reasonably Complex Object",
                 Count = 100,
                 Strings = new List<string> {"One", "Two", "Three"},
-                Floats = new[] {1f, 2f, 3f}
+                Floats = new[] {1f, 2f, 3f},
+                Level2 = new Level2 {
+                    Name = "Level2",
+                    Description = "Level #2",
+                    Count = 2,
+                    Level3 = new Level3 {
+                        Name = "Level3",
+                        Description = "Level #3",
+                        Count = 3
+                    },
+                    Strings = new List<string> {
+                        "One", "Two", "Three"
+                    }
+                }
             };
         }
 
@@ -30,8 +43,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             var writer = new BinaryWriter(new MemoryStream(), new UTF8Encoding(false));
 
             using (var jsonSerialisor = new StandardJsonSerialisor(writer)) {
-                Json.Serialise(jsonSerialisor, new PropertiesSerialisor(serialisableProperties),
-                    serialisableProperties.Serialisors);
+                Json.Serialise(jsonSerialisor, new PropertiesSerialisor(serialisableProperties));
 
                 _serialisedObject = jsonSerialisor.SerialisedObject;
             }

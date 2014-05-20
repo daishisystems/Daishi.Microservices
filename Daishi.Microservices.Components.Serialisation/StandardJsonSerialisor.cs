@@ -1,6 +1,5 @@
 ﻿#region Includes
 
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -8,36 +7,32 @@ using System.Linq;
 
 namespace Daishi.Microservices.Components.Serialisation {
     public class StandardJsonSerialisor : JsonSerialisor {
-        private const byte comma = 44;
         public StandardJsonSerialisor(BinaryWriter writer) : base(writer) {}
 
         public override void WriteStart() {
             writer.Write((byte) 123);
         }
 
-        public override bool SerialiseSimpleProperties(Serialisor serialisor) {
-            var serialisedSimpleProperties = serialisor.Serialise();
-            writer.Write(serialisedSimpleProperties);
-            return serialisedSimpleProperties.Any();
-        }
+        public override void Serialise(Serialisor serialisor) {
+            const byte comma = 44, bracket = 125;
 
-        public override void SerialiseComplexProperties(bool hasSimpleProperties, IEnumerable<Serialisor> serialisors) {
-            if (serialisors == null) return;
+            writer.Write(serialisor.Serialise(true));
+            var innerSerialisors = serialisor.InnerSerialisors;
 
-            var serialisorList = serialisors.ToList();
-            if (!serialisorList.Any()) return;
-
-            if (hasSimpleProperties)
+            if (innerSerialisors != null) {
                 writer.Write(comma);
+                var serialisors = innerSerialisors.ToList();
 
-            for (var i = 0; i < serialisorList.Count; i++) {
-                var serialisor = serialisorList[i];
-                DeepSerialisor.Serialise(serialisor, writer);
+                for (var i = 0; i < serialisors.Count; i++) {
+                    var s = serialisors[i];
+                    Serialise(s);
 
-                var isFinalItem = i.Equals(serialisorList.Count - 1);
-                if (!isFinalItem)
-                    writer.Write(comma);
+                    var isLastItem = i.Equals(serialisors.Count - 1);
+                    writer.Write(!isLastItem ? comma : bracket);
+                }
             }
+            else if (serialisor is PropertiesSerialisor)
+                writer.Write(bracket);
         }
 
         public override void WriteEnd() {

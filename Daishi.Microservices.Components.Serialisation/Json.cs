@@ -1,6 +1,5 @@
 ﻿#region Includes
 
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,10 +24,9 @@ namespace Daishi.Microservices.Components.Serialisation {
             }
         }
 
-        public static void Serialise(JsonSerialisor jsonSerialisor, Serialisor serialisor, IEnumerable<Serialisor> serialisors) {
+        public static void Serialise(JsonSerialisor jsonSerialisor, Serialisor serialisor) {
             jsonSerialisor.WriteStart();
-            var hasSimpleProperties = jsonSerialisor.SerialiseSimpleProperties(serialisor);
-            jsonSerialisor.SerialiseComplexProperties(hasSimpleProperties, serialisors);
+            jsonSerialisor.Serialise(serialisor);
             jsonSerialisor.WriteEnd();
         }
     }
