@@ -23,7 +23,7 @@ namespace Daishi.Microservices.Components.Serialisation {
             _objectName = objectName;
         }
 
-        public override byte[] Serialise() {
+        public override byte[] Serialise(bool isNested = false) {
             using (var writer = new StreamWriter(new MemoryStream(), new UTF8Encoding(false))) {
                 if (!string.IsNullOrEmpty(_objectName))
                     writer.Write(string.Concat("\"", _objectName, "\":"));

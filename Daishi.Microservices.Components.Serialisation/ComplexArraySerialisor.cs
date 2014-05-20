@@ -17,7 +17,7 @@ namespace Daishi.Microservices.Components.Serialisation {
             _serialisablePropertiesList = serialisablePropertiesList;
         }
 
-        public override byte[] Serialise() {
+        public override byte[] Serialise(bool isNested = false) {
             const byte comma = 44;
             var serialisablePropertiesList = _serialisablePropertiesList.ToList();
 

@@ -115,6 +115,15 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {&quot;name&quot;:&quot;Nested Object&quot;,&quot;level1&quot;:{&quot;name&quot;:&quot;Level1&quot;,&quot;description&quot;:&quot;Level #1&quot;,&quot;count&quot;:1,&quot;level2&quot;:{&quot;name&quot;:&quot;Level2&quot;,&quot;description&quot;:&quot;Level #2&quot;,&quot;count&quot;:2,&quot;level3&quot;:{&quot;name&quot;:&quot;Level3&quot;,&quot;description&quot;:&quot;Level #3&quot;,&quot;count&quot;:3},&quot;strings&quot;:[&quot;First&quot;,&quot;Second&quot;,&quot;Third&quot;]}}}.
+        /// </summary>
+        internal static string SerialisedNestedObject {
+            get {
+                return ResourceManager.GetString("SerialisedNestedObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {&quot;objectWithARawJsonProperty&quot;:{&quot;raw&quot;:{&quot;name&quot;:&quot;An Object&quot;,&quot;description&quot;:&quot;A generic object&quot;,&quot;array&quot;:[{&quot;name&quot;:&quot;Array Object #1&quot;,&quot;description&quot;:&quot;The 1st array object&quot;},{&quot;name&quot;:&quot;Array Object #2&quot;,&quot;description&quot;:&quot;The 2nd array object&quot;}]}}}.
         /// </summary>
         internal static string SerialisedObjectWithARawJSONProperty {

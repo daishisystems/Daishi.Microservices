@@ -13,6 +13,7 @@ namespace Daishi.Microservices.Components.Serialisation {
 
         public PropertiesSerialisor(SerialisableProperties serialisableProperties) {
             _serialisableProperties = serialisableProperties;
+            InnerSerialisors = serialisableProperties.Serialisors;
         }
 
         public PropertiesSerialisor(SerialisableProperties serialisableProperties,
@@ -20,7 +21,7 @@ namespace Daishi.Microservices.Components.Serialisation {
             _encapsulate = encapsulate;
         }
 
-        public override byte[] Serialise() {
+        public override byte[] Serialise(bool isNested = false) {
             using (var writer = new StreamWriter(new MemoryStream(), new UTF8Encoding(false))) {
                 if (!string.IsNullOrEmpty(_serialisableProperties.ObjectName)) {
                     _encapsulate = true;
@@ -37,7 +38,7 @@ namespace Daishi.Microservices.Components.Serialisation {
                     propertyWriter.Write(properties[i], isFinalItem, writer);
                 }
 
-                if (_encapsulate)
+                if (!isNested && _encapsulate)
                     writer.Write("}");
                 writer.Flush();
                 return ((MemoryStream) writer.BaseStream).ToArray();

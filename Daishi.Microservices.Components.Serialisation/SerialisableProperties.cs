@@ -35,6 +35,8 @@ namespace Daishi.Microservices.Components.Serialisation {
 
         public SerialisableProperties(string objectName,
             IEnumerable<Property> properties, IEnumerable<Serialisor> serialisors)
-            : this(properties, serialisors) {}
+            : this(properties, serialisors) {
+            //ObjectName = objectName;
+        }
     }
 }

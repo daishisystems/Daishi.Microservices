@@ -108,6 +108,17 @@
       <DependentUpon>JsonSerialisor.feature</DependentUpon>
     </Compile>
     <Compile Include="JsonSerialisorSteps.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="Level1.cs" />
+    <Compile Include="Level2.cs" />
+    <Compile Include="Level3.cs" />
+    <Compile Include="NestedObject.cs" />
+    <Compile Include="NestedObjectSerialisation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NestedObjectSerialisation.feature</DependentUpon>
+    </Compile>
+    <Compile Include="NestedObjectSerialisationSteps.cs" />
     <Compile Include="ObjectWithARawJsonProperty.cs" />
     <Compile Include="ObjectWithSimpleAndArrayProperties.feature.cs">
       <AutoGen>True</AutoGen>
@@ -187,6 +198,10 @@
     <None Include="JsonSerialisor.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>JsonSerialisor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="NestedObjectSerialisation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NestedObjectSerialisation.feature.cs</LastGenOutput>
     </None>
     <None Include="ObjectWithSimpleAndArrayProperties.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

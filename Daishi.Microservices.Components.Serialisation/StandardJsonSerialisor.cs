@@ -32,7 +32,7 @@ namespace Daishi.Microservices.Components.Serialisation {
 
             for (var i = 0; i < serialisorList.Count; i++) {
                 var serialisor = serialisorList[i];
-                writer.Write(serialisor.Serialise());
+                DeepSerialisor.Serialise(serialisor, writer);
 
                 var isFinalItem = i.Equals(serialisorList.Count - 1);
                 if (!isFinalItem)
