@@ -10,12 +10,12 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public int Count { get; set; }
 
         public virtual SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties("simpleObject", new List<Property> {
-                new StringProperty {
+            return new SerialisableProperties("simpleObject", new List<JsonProperty> {
+                new StringJsonProperty {
                     Key = "name",
                     Value = Name
                 },
-                new NumericProperty {
+                new NumericJsonProperty {
                     Key = "count",
                     Value = Count
                 }

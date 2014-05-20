@@ -1,7 +1,7 @@
 ﻿namespace Daishi.Microservices.Components.Serialisation {
-    public class NumericProperty : Property {
+    public class RawJsonProperty : JsonProperty {
         public override string FormatValue() {
-            return Value.ToString();
+            return string.Concat(Value);
         }
     }
 }

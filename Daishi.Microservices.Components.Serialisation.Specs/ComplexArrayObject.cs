@@ -10,12 +10,12 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public string Description { get; set; }
 
         public SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties("complexArrayObject", new List<Property> {
-                new StringProperty {
+            return new SerialisableProperties("complexArrayObject", new List<JsonProperty> {
+                new StringJsonProperty {
                     Key = "name",
                     Value = Name
                 },
-                new StringProperty {
+                new StringJsonProperty {
                     Key = "description",
                     Value = Description
                 }

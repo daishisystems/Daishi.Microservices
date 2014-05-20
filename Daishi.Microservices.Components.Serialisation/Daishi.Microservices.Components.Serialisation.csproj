@@ -39,10 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArraySerialisor.cs" />
-    <Compile Include="PropertiesSerialisor.cs" />
+    <Compile Include="JsonArraySerialisor.cs" />
+    <Compile Include="JsonPropertiesSerialisor.cs" />
     <Compile Include="CharacterFinder.cs" />
-    <Compile Include="ComplexArraySerialisor.cs" />
+    <Compile Include="ComplexJsonArraySerialisor.cs" />
     <Compile Include="IHaveSerialisableProperties.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="JsonContainerFactory.cs" />
@@ -53,18 +53,18 @@
     <Compile Include="JsonPropertyType.cs" />
     <Compile Include="JsonPropertyValidator.cs" />
     <Compile Include="JsonReader.cs" />
-    <Compile Include="JsonSerialisor.cs" />
-    <Compile Include="NumericProperty.cs" />
+    <Compile Include="JsonSerialisationStrategy.cs" />
+    <Compile Include="NumericJsonProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Property.cs" />
-    <Compile Include="PropertyWriter.cs" />
-    <Compile Include="RawProperty.cs" />
+    <Compile Include="JsonProperty.cs" />
+    <Compile Include="JsonPropertyWriter.cs" />
+    <Compile Include="RawJsonProperty.cs" />
     <Compile Include="SerialisableProperties.cs" />
-    <Compile Include="Serialisor.cs" />
+    <Compile Include="JsonSerialisor.cs" />
     <Compile Include="StandardJsonParser.cs" />
-    <Compile Include="StandardJsonSerialisor.cs" />
-    <Compile Include="StringProperty.cs" />
-    <Compile Include="ValueWriter.cs" />
+    <Compile Include="StandardJsonSerialisationStrategy.cs" />
+    <Compile Include="StringJsonProperty.cs" />
+    <Compile Include="JsonValueWriter.cs" />
     <Compile Include="WordBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

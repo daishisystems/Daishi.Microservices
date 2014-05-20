@@ -11,8 +11,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public override SerialisableProperties GetSerializableProperties() {
             var serialisableProperties = base.GetSerializableProperties();
             serialisableProperties.ObjectName = "level1";
-            serialisableProperties.Serialisors = new List<Serialisor> {
-                new PropertiesSerialisor(Level2.GetSerializableProperties())
+            serialisableProperties.Serialisors = new List<JsonSerialisor> {
+                new JsonPropertiesSerialisor(Level2.GetSerializableProperties())
             };
 
             return serialisableProperties;

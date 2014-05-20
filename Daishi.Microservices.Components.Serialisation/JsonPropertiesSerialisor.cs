@@ -7,17 +7,17 @@ using System.Text;
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation {
-    public class PropertiesSerialisor : Serialisor {
+    public class JsonPropertiesSerialisor : JsonSerialisor {
         private readonly SerialisableProperties _serialisableProperties;
         private bool _encapsulate;
 
-        public PropertiesSerialisor(SerialisableProperties serialisableProperties) {
+        public JsonPropertiesSerialisor(SerialisableProperties serialisableProperties) {
             _serialisableProperties = serialisableProperties;
             InnerSerialisors = serialisableProperties.Serialisors;
             IsNamed = !string.IsNullOrEmpty(serialisableProperties.ObjectName);
         }
 
-        public PropertiesSerialisor(SerialisableProperties serialisableProperties,
+        public JsonPropertiesSerialisor(SerialisableProperties serialisableProperties,
             bool encapsulate) : this(serialisableProperties) {
             _encapsulate = encapsulate;
         }
@@ -32,11 +32,10 @@ namespace Daishi.Microservices.Components.Serialisation {
                     writer.Write("{");
 
                 var properties = _serialisableProperties.Properties.ToList();
-                var propertyWriter = new PropertyWriter();
 
                 for (var i = 0; i < properties.Count; i++) {
                     var isFinalItem = i.Equals(properties.Count - 1);
-                    propertyWriter.Write(properties[i], isFinalItem, writer);
+                    JsonPropertyWriter.Write(properties[i], isFinalItem, writer);
                 }
 
                 if (!isNested && _encapsulate)

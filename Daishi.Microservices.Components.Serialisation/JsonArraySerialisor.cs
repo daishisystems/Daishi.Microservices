@@ -8,17 +8,17 @@ using System.Text;
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation {
-    public class ArraySerialisor : Serialisor {
+    public class JsonArraySerialisor : JsonSerialisor {
         private readonly string _objectName;
         private readonly IEnumerable<string> _values;
         private readonly JsonPropertyType _propertyType;
 
-        public ArraySerialisor(IEnumerable<string> values, JsonPropertyType propertyType) {
+        public JsonArraySerialisor(IEnumerable<string> values, JsonPropertyType propertyType) {
             _values = values;
             _propertyType = propertyType;
         }
 
-        public ArraySerialisor(string objectName, IEnumerable<string> values,
+        public JsonArraySerialisor(string objectName, IEnumerable<string> values,
             JsonPropertyType propertyType) : this(values, propertyType) {
             _objectName = objectName;
         }
@@ -30,7 +30,7 @@ namespace Daishi.Microservices.Components.Serialisation {
                 writer.Write("[");
 
                 var values = _values.ToList();
-                var valueWriter = new ValueWriter(_propertyType);
+                var valueWriter = new JsonValueWriter(_propertyType);
 
                 for (var i = 0; i < values.Count; i++) {
                     var isFinalItem = i.Equals(values.Count - 1);

@@ -9,8 +9,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public string RawJson { get; set; }
 
         public SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties("objectWithARawJsonProperty", new List<Property> {
-                new RawProperty {
+            return new SerialisableProperties("objectWithARawJsonProperty", new List<JsonProperty> {
+                new RawJsonProperty {
                     Key = "raw",
                     Value = RawJson
                 }

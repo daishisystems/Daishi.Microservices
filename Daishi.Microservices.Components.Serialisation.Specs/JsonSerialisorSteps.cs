@@ -12,7 +12,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
     [Binding]
     public class JsonSerialisorSteps {
         private ReasonablyComplexObject _reasonablyComplexObject;
-        private StandardJsonSerialisor _jsonSerialisor;
+        private StandardJsonSerialisationStrategy _jsonSerialisor;
 
         [Given(@"I have supplied a reasonably complex POCO")]
         public void GivenIHaveSuppliedAReasonablyComplexPOCO() {
@@ -39,13 +39,13 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         [Given(@"I have instantiated a JsonSerialisor")]
         public void GivenIHaveInstantiatedAJsonSerialisor() {
             var writer = new BinaryWriter(new MemoryStream(), new UTF8Encoding(false));
-            _jsonSerialisor = new StandardJsonSerialisor(writer);
+            _jsonSerialisor = new StandardJsonSerialisationStrategy(writer);
         }
 
         [When(@"I serialise the POCO")]
         public void WhenISerialiseThePOCO() {
             var serialisableProperties = _reasonablyComplexObject.GetSerializableProperties();
-            Json.Serialise(_jsonSerialisor, new PropertiesSerialisor(serialisableProperties));
+            Json.Serialise(_jsonSerialisor, new JsonPropertiesSerialisor(serialisableProperties));
         }
 
         [Then(@"the POCO should be serialised")]

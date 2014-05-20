@@ -12,7 +12,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
     [Binding]
     public class ArraySerialisorSteps {
         private SimpleObjectContainingAnArrayPropertyWithoutObjectName _simpleObjectContainingAnArrayPropertyWithoutObjectName;
-        private ArraySerialisor _arraySerialisor;
+        private JsonArraySerialisor _arraySerialisor;
         private byte[] _serialisedObject;
 
         [Given(@"I have supplied a simple object containing an array property and without an object-name")]
@@ -24,7 +24,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Given(@"I instantiated an ArraySerialisor targetting an array property and without an object-name")]
         public void GivenIInstantiatedAnArraySerialisorTargettingAnArrayPropertyAndWithoutAnObject_Name() {
-            _arraySerialisor = new ArraySerialisor(
+            _arraySerialisor = new JsonArraySerialisor(
                 _simpleObjectContainingAnArrayPropertyWithoutObjectName.Values.AsEnumerable(), 
                 JsonPropertyType.Alphabetic);
         }

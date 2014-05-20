@@ -12,9 +12,9 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public override SerialisableProperties GetSerializableProperties() {
             var serialisableProperties = base.GetSerializableProperties();
             serialisableProperties.ObjectName = "level2";
-            serialisableProperties.Serialisors = new List<Serialisor> {
-                new PropertiesSerialisor(Level3.GetSerializableProperties()),
-                new ArraySerialisor("strings", Strings, JsonPropertyType.Alphabetic)
+            serialisableProperties.Serialisors = new List<JsonSerialisor> {
+                new JsonPropertiesSerialisor(Level3.GetSerializableProperties()),
+                new JsonArraySerialisor("strings", Strings, JsonPropertyType.Alphabetic)
             };
 
             return serialisableProperties;

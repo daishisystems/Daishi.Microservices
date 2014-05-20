@@ -10,13 +10,13 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public Level1 Level1 { get; set; }
 
         public SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties(new List<Property> {
-                new StringProperty {
+            return new SerialisableProperties(new List<JsonProperty> {
+                new StringJsonProperty {
                     Key = "name",
                     Value = Name
                 }
-            }, new List<Serialisor> {
-                new PropertiesSerialisor(Level1.GetSerializableProperties())
+            }, new List<JsonSerialisor> {
+                new JsonPropertiesSerialisor(Level1.GetSerializableProperties())
             });
         }
     }

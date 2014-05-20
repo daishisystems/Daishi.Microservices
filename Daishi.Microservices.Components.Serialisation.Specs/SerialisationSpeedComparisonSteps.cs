@@ -46,8 +46,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             var writer = new BinaryWriter(new MemoryStream(), new UTF8Encoding(false));
             var serialisableProperties = _complexObject.GetSerializableProperties();
 
-            using (var serialisor = new StandardJsonSerialisor(writer))
-                Json.Serialise(serialisor, new PropertiesSerialisor(serialisableProperties));
+            using (var serialisor = new StandardJsonSerialisationStrategy(writer))
+                Json.Serialise(serialisor, new JsonPropertiesSerialisor(serialisableProperties));
 
             stopwatch.Stop();
             _result1 = stopwatch.ElapsedMilliseconds;

@@ -15,21 +15,21 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public Level2 Level2 { get; set; }
 
         public SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties("reasonablyComplexObject", new List<Property> {
-                new StringProperty {
+            return new SerialisableProperties("reasonablyComplexObject", new List<JsonProperty> {
+                new StringJsonProperty {
                     Key = "name",
                     Value = Name
                 },
-                new NumericProperty {
+                new NumericJsonProperty {
                     Key = "count",
                     Value = Count
                 }
-            }, new List<Serialisor> {
-                new ArraySerialisor("strings", Strings, JsonPropertyType.Alphabetic),
-                new ArraySerialisor("floats", Floats
+            }, new List<JsonSerialisor> {
+                new JsonArraySerialisor("strings", Strings, JsonPropertyType.Alphabetic),
+                new JsonArraySerialisor("floats", Floats
                     .Select(f => f.ToString(CultureInfo.InvariantCulture))
                     .AsEnumerable(), JsonPropertyType.Numeric),
-                new PropertiesSerialisor(Level2.GetSerializableProperties())
+                new JsonPropertiesSerialisor(Level2.GetSerializableProperties())
             });
         }
     }

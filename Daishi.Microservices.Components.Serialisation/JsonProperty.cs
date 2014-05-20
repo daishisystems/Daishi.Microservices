@@ -1,5 +1,5 @@
 ﻿namespace Daishi.Microservices.Components.Serialisation {
-    public abstract class Property {
+    public abstract class JsonProperty {
         public string Key { get; set; }
         public object Value { get; set; }
         public abstract string FormatValue();

@@ -6,14 +6,14 @@ using System.Linq;
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation {
-    public class StandardJsonSerialisor : JsonSerialisor {
-        public StandardJsonSerialisor(BinaryWriter writer) : base(writer) {}
+    public class StandardJsonSerialisationStrategy : JsonSerialisationStrategy {
+        public StandardJsonSerialisationStrategy(BinaryWriter writer) : base(writer) {}
 
         public override void WriteStart() {
             writer.Write((byte) 123);
         }
 
-        public override void Serialise(Serialisor serialisor) {
+        public override void Serialise(JsonSerialisor serialisor) {
             const byte comma = 44, bracket = 125;
 
             writer.Write(serialisor.Serialise(true));
@@ -31,7 +31,7 @@ namespace Daishi.Microservices.Components.Serialisation {
                     writer.Write(!isLastItem ? comma : bracket);
                 }
             }
-            else if (serialisor is PropertiesSerialisor)
+            else if (serialisor is JsonPropertiesSerialisor)
                 writer.Write(bracket);
         }
 

@@ -13,7 +13,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
     [Binding]
     public class ComplexArraySerialisorSteps {
         private ComplexArrayObjectContainer _container;
-        private ComplexArraySerialisor _serialisor;
+        private ComplexJsonArraySerialisor _serialisor;
         private byte[] _serialisedObject;
 
         [Given(@"I have supplied an object consisting of a complex array")]
@@ -38,7 +38,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Given(@"I have instantiated a ComplexArraySerialisor")]
         public void GivenIHaveInstantiatedAComplexArraySerialisor() {
-            _serialisor = new ComplexArraySerialisor("arrayOfComplexObjects",
+            _serialisor = new ComplexJsonArraySerialisor("arrayOfComplexObjects",
                 _container.ComplexArrayObjects.Select(c => c.GetSerializableProperties()));
         }
 

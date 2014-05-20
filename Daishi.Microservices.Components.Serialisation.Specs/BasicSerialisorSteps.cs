@@ -12,7 +12,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
     public class BasicSerialisorSteps {
         private SimpleObject _simpleObject;
         private SimpleObjectThatDoesNotHaveAName _simpleObjectThatDoesNotHaveAName;
-        private Serialisor _serialisor;
+        private JsonSerialisor _serialisor;
         private byte[] _serialisedObject;
 
         [Given(@"I have supplied a simple object")]
@@ -33,12 +33,12 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Given(@"I have instantiated a BasicSerialisor")]
         public void GivenIHaveInstantiatedABasicSerialisor() {
-            _serialisor = new PropertiesSerialisor(_simpleObject.GetSerializableProperties(), true);
+            _serialisor = new JsonPropertiesSerialisor(_simpleObject.GetSerializableProperties(), true);
         }
 
         [Given(@"I have instantiated a BasicSerialisor targetting an object that does not have a name")]
         public void GivenIHaveInstantiatedABasicSerialisorTargettingAnObjectThatDoesNotHaveAName() {
-            _serialisor = new PropertiesSerialisor(_simpleObjectThatDoesNotHaveAName.GetSerializableProperties(), true);
+            _serialisor = new JsonPropertiesSerialisor(_simpleObjectThatDoesNotHaveAName.GetSerializableProperties(), true);
         }
 
         [When(@"I serialise the simple object")]

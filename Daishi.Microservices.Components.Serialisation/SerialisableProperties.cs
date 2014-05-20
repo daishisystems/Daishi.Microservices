@@ -7,34 +7,34 @@ using System.Collections.Generic;
 namespace Daishi.Microservices.Components.Serialisation {
     public class SerialisableProperties {
         public string ObjectName { get; set; }
-        public IEnumerable<Property> Properties { get; private set; }
-        public IEnumerable<Serialisor> Serialisors { get; set; }
+        public IEnumerable<JsonProperty> Properties { get; private set; }
+        public IEnumerable<JsonSerialisor> Serialisors { get; set; }
 
-        public SerialisableProperties(IEnumerable<Property> properties) {
+        public SerialisableProperties(IEnumerable<JsonProperty> properties) {
             Properties = properties;
         }
 
-        public SerialisableProperties(IEnumerable<Serialisor> serialisors) {
+        public SerialisableProperties(IEnumerable<JsonSerialisor> serialisors) {
             Serialisors = serialisors;
         }
 
         public SerialisableProperties(string objectName,
-            IEnumerable<Property> properties) : this(properties) {
+            IEnumerable<JsonProperty> properties) : this(properties) {
             ObjectName = objectName;
         }
 
         public SerialisableProperties(string objectName,
-            IEnumerable<Serialisor> serialisors) : this(serialisors) {
+            IEnumerable<JsonSerialisor> serialisors) : this(serialisors) {
             ObjectName = objectName;
         }
 
-        public SerialisableProperties(IEnumerable<Property> properties,
-            IEnumerable<Serialisor> serialisors) : this(properties) {
+        public SerialisableProperties(IEnumerable<JsonProperty> properties,
+            IEnumerable<JsonSerialisor> serialisors) : this(properties) {
             Serialisors = serialisors;
         }
 
         public SerialisableProperties(string objectName,
-            IEnumerable<Property> properties, IEnumerable<Serialisor> serialisors)
+            IEnumerable<JsonProperty> properties, IEnumerable<JsonSerialisor> serialisors)
             : this(properties, serialisors) {
             ObjectName = objectName;
         }

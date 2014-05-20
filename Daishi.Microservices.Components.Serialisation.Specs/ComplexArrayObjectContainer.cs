@@ -11,13 +11,13 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public List<ComplexArrayObject> ComplexArrayObjects { get; set; }
 
         public SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties(new List<Property> {
-                new StringProperty {
+            return new SerialisableProperties(new List<JsonProperty> {
+                new StringJsonProperty {
                     Key = "name",
                     Value = Name
                 }
-            }, new List<Serialisor> {
-                new ComplexArraySerialisor("arrayOfComplexObjects",
+            }, new List<JsonSerialisor> {
+                new ComplexJsonArraySerialisor("arrayOfComplexObjects",
                     ComplexArrayObjects.Select(c => c.GetSerializableProperties()))
             });
         }

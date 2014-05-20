@@ -7,8 +7,8 @@ using System.Text;
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation {
-    public class Json {
-        public static void Parse(JsonParser parser, string data, string propertyName, bool returnFirst = false) {
+    public static class Json {
+        public static void Parse(JsonParser parser, string data, string propertyName) {
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(data));
 
             using (var reader = new BinaryReader(stream)) {
@@ -24,10 +24,10 @@ namespace Daishi.Microservices.Components.Serialisation {
             }
         }
 
-        public static void Serialise(JsonSerialisor jsonSerialisor, Serialisor serialisor) {
-            jsonSerialisor.WriteStart();
-            jsonSerialisor.Serialise(serialisor);
-            jsonSerialisor.WriteEnd(serialisor.IsNamed);
+        public static void Serialise(JsonSerialisationStrategy strategy, JsonSerialisor serialisor) {
+            strategy.WriteStart();
+            strategy.Serialise(serialisor);
+            strategy.WriteEnd(serialisor.IsNamed);
         }
     }
 }

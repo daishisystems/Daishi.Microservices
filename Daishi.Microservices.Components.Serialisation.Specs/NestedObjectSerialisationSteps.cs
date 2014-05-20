@@ -44,8 +44,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             var serialisableProperties = _nestedObject.GetSerializableProperties();
             var writer = new BinaryWriter(new MemoryStream(), new UTF8Encoding(false));
 
-            using (var parser = new StandardJsonSerialisor(writer)) {
-                Json.Serialise(parser, new PropertiesSerialisor(serialisableProperties));
+            using (var parser = new StandardJsonSerialisationStrategy(writer)) {
+                Json.Serialise(parser, new JsonPropertiesSerialisor(serialisableProperties));
                 _serialisedObject = parser.SerialisedObject;
             }
         }

@@ -8,11 +8,11 @@ using System.Text;
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation {
-    public class ComplexArraySerialisor : Serialisor {
+    public class ComplexJsonArraySerialisor : JsonSerialisor {
         private readonly string _objectName;
         private readonly IEnumerable<SerialisableProperties> _serialisablePropertiesList;
 
-        public ComplexArraySerialisor(string objectName, IEnumerable<SerialisableProperties> serialisablePropertiesList) {
+        public ComplexJsonArraySerialisor(string objectName, IEnumerable<SerialisableProperties> serialisablePropertiesList) {
             _objectName = objectName;
             _serialisablePropertiesList = serialisablePropertiesList;
         }
@@ -28,7 +28,7 @@ namespace Daishi.Microservices.Components.Serialisation {
                     var serialisableProperties = serialisablePropertiesList[i];
                     serialisableProperties.ObjectName = string.Empty;
 
-                    var propertiesSerialisor = new PropertiesSerialisor(serialisableProperties, true);
+                    var propertiesSerialisor = new JsonPropertiesSerialisor(serialisableProperties, true);
                     writer.Write(propertiesSerialisor.Serialise());
 
                     var isLastItem = i.Equals(serialisablePropertiesList.Count - 1);

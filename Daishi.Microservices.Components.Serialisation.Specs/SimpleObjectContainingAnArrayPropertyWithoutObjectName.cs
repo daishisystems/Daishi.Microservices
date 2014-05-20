@@ -10,8 +10,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         public string[] Values { get; set; }
 
         public virtual SerialisableProperties GetSerializableProperties() {
-            return new SerialisableProperties(new List<Property>(
-                Values.Select(v => new StringProperty {
+            return new SerialisableProperties(new List<JsonProperty>(
+                Values.Select(v => new StringJsonProperty {
                     Value = v
                 })));
         }
