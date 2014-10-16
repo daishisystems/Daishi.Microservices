@@ -19,9 +19,9 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             var stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            var parser = new StandardJsonParser();
-            Json.Parse(parser, Resources.LargeJSON, "response");
-
+            var parser = new JsonObjectParser();
+            Json.Parse(parser, Resources.LargeJSON, "levels");
+            
             stopwatch.Stop();
             _result1 = stopwatch.ElapsedMilliseconds;
         }

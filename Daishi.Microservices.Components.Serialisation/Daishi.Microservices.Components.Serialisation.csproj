@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonArrayParser.cs" />
     <Compile Include="JsonArraySerialisor.cs" />
     <Compile Include="JsonPropertiesSerialisor.cs" />
     <Compile Include="CharacterFinder.cs" />
@@ -61,7 +62,7 @@
     <Compile Include="RawJsonProperty.cs" />
     <Compile Include="SerialisableProperties.cs" />
     <Compile Include="JsonSerialisor.cs" />
-    <Compile Include="StandardJsonParser.cs" />
+    <Compile Include="JsonObjectParser.cs" />
     <Compile Include="StandardJsonSerialisationStrategy.cs" />
     <Compile Include="StringJsonProperty.cs" />
     <Compile Include="JsonValueWriter.cs" />

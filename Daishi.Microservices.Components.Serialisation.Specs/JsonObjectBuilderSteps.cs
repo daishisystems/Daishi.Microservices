@@ -37,7 +37,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Then(@"the full JSON object should be returned")]
         public void ThenTheFullJSONObjectShouldBeReturned() {
-            Assert.AreEqual(18824, _jsonObject.Length);
+            Assert.AreEqual(18828, _jsonObject.Length);
         }
     }
 }

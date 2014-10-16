@@ -24,17 +24,23 @@ namespace Daishi.Microservices.Components.Serialisation {
 
             int startContainerCount = 1, endContainerCount = 0;
             int current;
+            var isPropertyValue = false;
 
             var stringBuilder = new StringBuilder();
             stringBuilder.Append(_jsonReader.ReadToValue(startContainer).ToArray());
 
+            const char quote = (char) 34;
             do {
                 current = _binaryReader.Read();
                 var character = (char) current;
 
-                if (character.Equals(startContainer))
+                if (character.Equals(quote) && !isPropertyValue)
+                    isPropertyValue = true;
+                else if (character.Equals(quote) && isPropertyValue)
+                    isPropertyValue = false;
+                else if (character.Equals(startContainer) && !isPropertyValue)
                     startContainerCount++;
-                else if (character.Equals(endContainer))
+                else if (character.Equals(endContainer) && !isPropertyValue)
                     endContainerCount++;
 
                 stringBuilder.Append(character);
