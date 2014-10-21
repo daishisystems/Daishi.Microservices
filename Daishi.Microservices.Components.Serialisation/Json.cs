@@ -2,17 +2,13 @@
 
 using System.IO;
 using System.Linq;
-using System.Text;
 
 #endregion
 
 namespace Daishi.Microservices.Components.Serialisation {
     public static class Json {
-        public static void Parse(JsonParser parser, string data, string propertyName) {
-            // todo: change to to accept stream by default.
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(data));
-
-            using (var reader = new BinaryReader(stream)) {
+        public static void Parse(JsonParser parser, Stream data, string propertyName) {
+            using (var reader = new BinaryReader(data)) {
                 var properties = parser.FindProperty(new JsonPropertyFinder(new CharacterFinder(reader),
                     new WordBuilder(reader),
                     new JsonPropertyValidator(reader)), propertyName);

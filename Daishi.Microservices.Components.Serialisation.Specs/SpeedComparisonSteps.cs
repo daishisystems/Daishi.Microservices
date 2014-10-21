@@ -2,6 +2,8 @@
 
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -20,8 +22,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             stopwatch.Start();
 
             var parser = new JsonObjectParser();
-            Json.Parse(parser, Resources.JSONWithDuplicateObjects, "item");
-            
+            Json.Parse(parser, new MemoryStream(Encoding.UTF8.GetBytes(Resources.JSONWithDuplicateObjects)), "item");
+
             stopwatch.Stop();
             _result1 = stopwatch.ElapsedMilliseconds;
         }
