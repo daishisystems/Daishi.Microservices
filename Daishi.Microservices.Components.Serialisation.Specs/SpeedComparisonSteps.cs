@@ -18,11 +18,13 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Given(@"I have parsed a JSON object using these components")]
         public void GivenIHaveParsedAJSONObjectUsingTheseComponents() {
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(Resources.JSONWithDuplicateObjects));
+            var parser = new JsonObjectParser();
+
             var stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            var parser = new JsonObjectParser();
-            Json.Parse(parser, new MemoryStream(Encoding.UTF8.GetBytes(Resources.JSONWithDuplicateObjects)), "item");
+            Json.Parse(parser, stream, "item");
 
             stopwatch.Stop();
             _result1 = stopwatch.ElapsedMilliseconds;
