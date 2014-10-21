@@ -20,7 +20,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
             stopwatch.Start();
 
             var parser = new JsonObjectParser();
-            Json.Parse(parser, Resources.LargeJSON, "levels");
+            Json.Parse(parser, Resources.JSONWithDuplicateObjects, "item");
             
             stopwatch.Stop();
             _result1 = stopwatch.ElapsedMilliseconds;

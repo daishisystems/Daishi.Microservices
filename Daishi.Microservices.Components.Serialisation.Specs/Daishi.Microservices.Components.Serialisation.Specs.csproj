@@ -84,6 +84,12 @@
       <DependentUpon>ComplexObjectSerialisation.feature</DependentUpon>
     </Compile>
     <Compile Include="ComplexObjectSerialisationSteps.cs" />
+    <Compile Include="JSONCanBeParsedToSimpleDictionary.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JSONCanBeParsedToSimpleDictionary.feature</DependentUpon>
+    </Compile>
+    <Compile Include="JSONCanBeParsedToSimpleDictionarySteps.cs" />
     <Compile Include="JsonObjectBuilder.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,8 +151,15 @@
       <DependentUpon>SerialiseRawJSON.feature</DependentUpon>
     </Compile>
     <Compile Include="SerialiseRawJSONSteps.cs" />
+    <Compile Include="SimpleJSONIsDeserialised.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SimpleJSONIsDeserialised.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleJSONIsDeserialisedSteps.cs" />
     <Compile Include="SimpleObject.cs" />
     <Compile Include="SimpleObjectContainingAnArrayPropertyWithoutObjectName.cs" />
+    <Compile Include="SimpleObjectDeserialiser.cs" />
     <Compile Include="SimpleObjectThatDoesNotHaveAName.cs" />
     <Compile Include="SpeedComparison.feature.cs">
       <AutoGen>True</AutoGen>
@@ -183,6 +196,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ComplexObjectSerialisation.feature.cs</LastGenOutput>
     </None>
+    <None Include="JSONCanBeParsedToSimpleDictionary.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JSONCanBeParsedToSimpleDictionary.feature.cs</LastGenOutput>
+    </None>
     <None Include="JsonObjectBuilder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>JsonObjectBuilder.feature.cs</LastGenOutput>
@@ -215,6 +232,10 @@
     <None Include="SerialiseRawJSON.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SerialiseRawJSON.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SimpleJSONIsDeserialised.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SimpleJSONIsDeserialised.feature.cs</LastGenOutput>
     </None>
     <None Include="SpeedComparison.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -9,6 +9,7 @@ using System.Text;
 namespace Daishi.Microservices.Components.Serialisation {
     public static class Json {
         public static void Parse(JsonParser parser, string data, string propertyName) {
+            // todo: change to to accept stream by default.
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(data));
 
             using (var reader = new BinaryReader(stream)) {
@@ -28,6 +29,10 @@ namespace Daishi.Microservices.Components.Serialisation {
             strategy.WriteStart();
             strategy.Serialise(serialisor);
             strategy.WriteEnd(serialisor.IsNamed);
+        }
+
+        public static T Deserialise<T>(Deserialiser<T> deserialiser) {
+            return deserialiser.Deserialise();
         }
     }
 }

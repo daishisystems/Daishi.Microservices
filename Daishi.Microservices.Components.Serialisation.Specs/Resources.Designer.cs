@@ -61,6 +61,15 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {&quot;response&quot;:{&quot;item&quot;:{&quot;name&quot;:&quot;Item #1&quot;,&quot;metadata&quot;:&quot;1&quot;}},&quot;item&quot;:{&quot;name&quot;:&quot;Item #2&quot;,&quot;metadata&quot;:&quot;2&quot;},&quot;footer&quot;:{&quot;item&quot;:{&quot;name&quot;:&quot;Item #1&quot;,&quot;metadata&quot;:&quot;1&quot;}}}.
+        /// </summary>
+        internal static string JSONWithDuplicateObjects {
+            get {
+                return ResourceManager.GetString("JSONWithDuplicateObjects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {&quot;item&quot;:{&quot;name&quot;:&quot;Item #1&quot;},&quot;container&quot;:{&quot;item&quot;:{&quot;name&quot;:&quot;Item #2&quot;}}}.
         /// </summary>
         internal static string JSONWithMultipleItems {
@@ -154,6 +163,27 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         internal static string SimpleJSON {
             get {
                 return ResourceManager.GetString("SimpleJSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;simpleObject&quot;: {
+        ///        &quot;name&quot;: &quot;Simple Object&quot;,
+        ///        &quot;count&quot;: 1,
+        ///        &quot;misc&quot;: [
+        ///            1,
+        ///            2,
+        ///            3,
+        ///            4,
+        ///            5
+        ///        ]
+        ///    }
+        ///}.
+        /// </summary>
+        internal static string VerySimpleJSON {
+            get {
+                return ResourceManager.GetString("VerySimpleJSON", resourceCulture);
             }
         }
     }
