@@ -132,6 +132,50 @@
   <data name="RawJSON" xml:space="preserve">
     <value>{"name":"An Object","description":"A generic object","array":[{"name":"Array Object #1","description":"The 1st array object"},{"name":"Array Object #2","description":"The 2nd array object"}]}</value>
   </data>
+  <data name="SchoolJson" xml:space="preserve">
+    <value>{
+    "school": {
+        "classrooms": [
+            {
+                "name": "Room #1",
+                "teachers": [
+                    {
+                        "name": "Pablo",
+                        "age": 33
+                    },
+                    {
+                        "name": "John",
+                        "age": 28
+                    }
+                ],
+                "blackboard": {
+                    "madeOf": "wood",
+                    "height": "100",
+                    "width": "500"
+                }
+            },
+            {
+                "name": "Room #2",
+                "teachers": [
+                    {
+                        "name": "David",
+                        "age": 33
+                    },
+                    {
+                        "name": "Mary",
+                        "age": 28
+                    }
+                ],
+                "blackboard": {
+                    "madeOf": "metal",
+                    "height": "200",
+                    "width": "600"
+                }
+            }
+        ]
+    }
+}</value>
+  </data>
   <data name="SerialisedArrayOfComplexObjects" xml:space="preserve">
     <value>"arrayOfComplexObjects":[{"name":"#1","description":"Complex Array Object #1"},{"name":"#2","description":"Complex Array Object #2"},{"name":"#3","description":"Complex Array Object #3"}]</value>
   </data>

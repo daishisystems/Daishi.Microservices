@@ -106,6 +106,33 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;school&quot;: {
+        ///        &quot;classrooms&quot;: [
+        ///            {
+        ///                &quot;name&quot;: &quot;Room #1&quot;,
+        ///                &quot;teachers&quot;: [
+        ///                    {
+        ///                        &quot;name&quot;: &quot;Pablo&quot;,
+        ///                        &quot;age&quot;: 33
+        ///                    },
+        ///                    {
+        ///                        &quot;name&quot;: &quot;John&quot;,
+        ///                        &quot;age&quot;: 28
+        ///                    }
+        ///                ],
+        ///                &quot;blackboard&quot;: {
+        ///                    &quot;madeOf&quot;: &quot;wood&quot;,
+        ///                    &quot;height&quot;: &quot;100&quot;,
+        ///          [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SchoolJson {
+            get {
+                return ResourceManager.GetString("SchoolJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;arrayOfComplexObjects&quot;:[{&quot;name&quot;:&quot;#1&quot;,&quot;description&quot;:&quot;Complex Array Object #1&quot;},{&quot;name&quot;:&quot;#2&quot;,&quot;description&quot;:&quot;Complex Array Object #2&quot;},{&quot;name&quot;:&quot;#3&quot;,&quot;description&quot;:&quot;Complex Array Object #3&quot;}].
         /// </summary>
         internal static string SerialisedArrayOfComplexObjects {

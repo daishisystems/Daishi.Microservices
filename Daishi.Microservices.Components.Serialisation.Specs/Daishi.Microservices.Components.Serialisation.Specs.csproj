@@ -84,6 +84,12 @@
       <DependentUpon>ComplexObjectSerialisation.feature</DependentUpon>
     </Compile>
     <Compile Include="ComplexObjectSerialisationSteps.cs" />
+    <Compile Include="FindAllBlackboards.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindAllBlackboards.feature</DependentUpon>
+    </Compile>
+    <Compile Include="FindAllBlackboardsSteps.cs" />
     <Compile Include="JSONCanBeParsedToSimpleDictionary.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +201,10 @@
     <None Include="ComplexObjectSerialisation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ComplexObjectSerialisation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="FindAllBlackboards.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FindAllBlackboards.feature.cs</LastGenOutput>
     </None>
     <None Include="JSONCanBeParsedToSimpleDictionary.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
