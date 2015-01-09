@@ -1,9 +1,9 @@
 ﻿namespace Daishi.Microservices.Components.Serialisation {
     public abstract class Deserialiser<T> {
-        protected readonly SimpleJSONParser parser;
+        protected readonly JsonNameValueCollection jsonNameValueCollection;
 
-        protected Deserialiser(SimpleJSONParser parser) {
-            this.parser = parser;
+        protected Deserialiser(JsonNameValueCollection jsonNameValueCollection) {
+            this.jsonNameValueCollection = jsonNameValueCollection;
         }
 
         public abstract T Deserialise();

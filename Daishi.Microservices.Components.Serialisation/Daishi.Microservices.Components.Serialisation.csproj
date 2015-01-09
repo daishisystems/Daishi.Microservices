@@ -46,6 +46,7 @@
     <Compile Include="Deserialiser.cs" />
     <Compile Include="JsonArrayParser.cs" />
     <Compile Include="JsonArraySerialisor.cs" />
+    <Compile Include="JsonNameValueCollection.cs" />
     <Compile Include="JsonPropertiesSerialisor.cs" />
     <Compile Include="CharacterFinder.cs" />
     <Compile Include="ComplexJsonArraySerialisor.cs" />
@@ -68,7 +69,7 @@
     <Compile Include="SerialisableProperties.cs" />
     <Compile Include="JsonSerialisor.cs" />
     <Compile Include="JsonObjectParser.cs" />
-    <Compile Include="SimpleJSONParser.cs" />
+    <Compile Include="StandardJsonNameValueCollection.cs" />
     <Compile Include="StandardJsonSerialisationStrategy.cs" />
     <Compile Include="StringJsonProperty.cs" />
     <Compile Include="JsonValueWriter.cs" />

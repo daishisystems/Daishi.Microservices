@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Daishi.Microservices.Components.Serialisation</id>
+    <version>1.0.1</version>
+    <title>JSON#</title>
+    <authors>Paul Mooney</authors>
+    <owners>Paul Mooney</owners>
+    <licenseUrl>https://github.com/daishisystems/Daishi.Microservices/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://insidethecpu.com/2014/10/22/ultrafast-json-parsing/</projectUrl>
+    <iconUrl>https://dl.dropboxusercontent.com/u/26042707/Daishi%20Systems%20Icon%20%28minute%29.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Performance-optimised JSON-serialisation tool for .NET.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>json serialisation parsing performance</tags>
+  </metadata>
+</package>

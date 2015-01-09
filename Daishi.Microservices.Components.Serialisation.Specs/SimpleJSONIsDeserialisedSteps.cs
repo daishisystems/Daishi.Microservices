@@ -13,7 +13,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [Given(@"I have instantiated an extension of Deserialiser(.*)")]
         public void GivenIHaveInstantiatedAnExtensionOfDeserialiser(string p0) {
-            _simpleObjectDeserialiser = new SimpleObjectDeserialiser(new SimpleJSONParser(Resources.VerySimpleJSON));
+            _simpleObjectDeserialiser = new SimpleObjectDeserialiser(new StandardJsonNameValueCollection(Resources.VerySimpleJSON));
         }
 
         [When(@"I deserialise a simple JSON object")]

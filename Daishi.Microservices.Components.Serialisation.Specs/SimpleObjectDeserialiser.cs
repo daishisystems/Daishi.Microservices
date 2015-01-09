@@ -6,10 +6,10 @@ using System;
 
 namespace Daishi.Microservices.Components.Serialisation.Specs {
     internal class SimpleObjectDeserialiser : Deserialiser<SimpleObject> {
-        public SimpleObjectDeserialiser(SimpleJSONParser parser) : base(parser) {}
+        public SimpleObjectDeserialiser(StandardJsonNameValueCollection parser) : base(parser) {}
 
         public override SimpleObject Deserialise() {
-            var properties = parser.Parse();
+            var properties = jsonNameValueCollection.Parse();
 
             return new SimpleObject {
                 Name = properties.Get("simpleObject.name"),
