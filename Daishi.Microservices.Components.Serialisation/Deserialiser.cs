@@ -6,6 +6,6 @@
             this.jsonNameValueCollection = jsonNameValueCollection;
         }
 
-        public abstract T Deserialise();
+        public abstract T Deserialise(bool mergeArrayValues = false);
     }
 }

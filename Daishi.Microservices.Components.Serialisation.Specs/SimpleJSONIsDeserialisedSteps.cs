@@ -18,7 +18,7 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
 
         [When(@"I deserialise a simple JSON object")]
         public void WhenIDeserialiseASimpleJSONObject() {
-            _simpleObject = Json.Deserialise(_simpleObjectDeserialiser);
+            _simpleObject = Json.Deserialise(_simpleObjectDeserialiser, true);
         }
 
         [Then(@"the corresponding POCO should be set appropriately")]

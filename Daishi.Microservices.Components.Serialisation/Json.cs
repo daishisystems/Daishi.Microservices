@@ -27,8 +27,8 @@ namespace Daishi.Microservices.Components.Serialisation {
             strategy.WriteEnd(serialisor.IsNamed);
         }
 
-        public static T Deserialise<T>(Deserialiser<T> deserialiser) {
-            return deserialiser.Deserialise();
+        public static T Deserialise<T>(Deserialiser<T> deserialiser, bool mergeArrayValues = false) {
+            return deserialiser.Deserialise(mergeArrayValues);
         }
     }
 }

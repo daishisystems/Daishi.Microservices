@@ -8,8 +8,8 @@ namespace Daishi.Microservices.Components.Serialisation.Specs {
     internal class SimpleObjectDeserialiser : Deserialiser<SimpleObject> {
         public SimpleObjectDeserialiser(StandardJsonNameValueCollection parser) : base(parser) {}
 
-        public override SimpleObject Deserialise() {
-            var properties = jsonNameValueCollection.Parse();
+        public override SimpleObject Deserialise(bool mergeArrayValues = false) {
+            var properties = jsonNameValueCollection.Parse(mergeArrayValues);
 
             return new SimpleObject {
                 Name = properties.Get("simpleObject.name"),

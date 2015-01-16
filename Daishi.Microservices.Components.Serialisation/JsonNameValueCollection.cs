@@ -12,6 +12,6 @@ namespace Daishi.Microservices.Components.Serialisation {
             this.json = json;
         }
 
-        public abstract NameValueCollection Parse();
+        public abstract NameValueCollection Parse(bool mergeArrayValues = false);
     }
 }
