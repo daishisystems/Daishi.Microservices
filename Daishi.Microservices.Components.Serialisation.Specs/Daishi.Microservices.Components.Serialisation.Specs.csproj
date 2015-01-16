@@ -78,6 +78,13 @@
     </Compile>
     <Compile Include="ComplexArraySerialisorSteps.cs" />
     <Compile Include="ComplexObject.cs" />
+    <Compile Include="ComplexObjectDeserialisationFeature.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComplexObjectDeserialisationFeature.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ComplexObjectDeserialisationFeatureSteps.cs" />
+    <Compile Include="ComplexObjectDeserialiser.cs" />
     <Compile Include="ComplexObjectSerialisation.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -197,6 +204,10 @@
     <None Include="ComplexArraySerialisor.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ComplexArraySerialisor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ComplexObjectDeserialisationFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ComplexObjectDeserialisationFeature.feature.cs</LastGenOutput>
     </None>
     <None Include="ComplexObjectSerialisation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
