@@ -24,7 +24,7 @@ namespace Daishi.Microservices.Components.Serialisation {
 
         public virtual void Close() {
             if (writer != null)
-                writer.Dispose();
+                writer.Close();
         }
     }
 }
